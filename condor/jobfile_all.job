@@ -1,0 +1,35 @@
+Universe = vanilla
+
+RequestCpus = 8
+RequestMemory = 30G
++RequestWallTime = 300000
+request_GPUs = 1
+
+Requirements = (CUDACapability >= 5.0)\
+  &&(CUDAGlobalMemoryMb >= 5000)\
+  &&(machine!="spchcl23.esat.kuleuven.be")\
+  &&(machine!="spchcl24.esat.kuleuven.be")\
+  &&(machine!="molder.esat.kuleuven.be")\
+  &&(machine!="blanche.esat.kuleuven.be")\
+  &&(machine!="yperman.esat.kuleuven.be")\
+  &&(machine!="bornholm.esat.kuleuven.be")\
+  &&(machine!="kiviuq.esat.kuleuven.be")\
+  &&(machine!="spchcl18.esat.kuleuven.be")\
+  &&(machine!="spchcl19.esat.kuleuven.be")\
+  &&(machine!="spchcl21.esat.kuleuven.be")\
+  &&(machine!="spchcl17.esat.kuleuven.be")\
+  &&(machine!="estragon.esat.kuleuven.be")
+
+NiceUser = true
+initialdir = /users/spraak/jponcele/JakobFHVAE
+
+Executable = condor/run_all.sh
+Arguments = "$(expdir) $(trainconfig) $(classconfig)"
+
+Log          = $(expdir)/condor.log
+Output       = $(expdir)/condor.out
+Error        = $(expdir)/condor.err
+
+# usage: condor_submit jobfile.job expdir=/esat/spchdisk/scratch/jponcele/fhvae_jakob/exp config=/users/spraak/jponcele/JakobFHVAE/config.cfg
+
+Queue
