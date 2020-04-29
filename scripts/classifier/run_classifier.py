@@ -16,6 +16,21 @@ from scripts.classifier.classifier_model import classifier
 from scripts.classifier.test_classifier import testClassifier
 
 ## Usage: python scripts/classifier/run_classifier.py --expdir <expdir> --config configs/classifier/<...>
+'''
+Commands (pycharm setup)
+Script path:
+/users/spraak/jponcele/JakobFHVAE/scripts/classifier/run_classifier.py
+
+Parameters:
+--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/exp_</>
+--config configs/classifier/config_timit_39phones.cfg
+
+Conda environment:
+Python 3.6 -- conda env 'tf21'
+
+Working directory:
+/users/spraak/jponcele/JakobFHVAE
+'''
 
 def main(expdir, configfile):
 

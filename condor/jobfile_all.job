@@ -1,8 +1,10 @@
 Universe = vanilla
 
+#cgn: 8 / 30G / 300000 / 1
+#timit: 8 / 10G / 
 RequestCpus = 8
-RequestMemory = 30G
-+RequestWallTime = 300000
+RequestMemory = 10G
++RequestWallTime = 64000
 request_GPUs = 1
 
 Requirements = (CUDACapability >= 5.0)\

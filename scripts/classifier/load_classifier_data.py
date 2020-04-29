@@ -57,7 +57,7 @@ def getData(path, latent_var):
             x_all = x_temp
 
         y_all = np.append(y_all, phoneme)
-
+    
     return x_all, y_all
 
 

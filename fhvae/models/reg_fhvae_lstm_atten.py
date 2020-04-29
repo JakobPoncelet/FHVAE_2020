@@ -28,12 +28,14 @@ class RegFHVAE_attention(tf.keras.Model):
         # nlabs = dictionary with for each label, the dimension of the regularization vector
         self.z1_nlabs, self.z2_nlabs = z1_nlabs, z2_nlabs
         self.nmu2 = nmu2
-        self.mu2_table = tf.Variable(tf.random.normal([nmu2, z2_dim], stddev=1.0), trainable=False)
+        self.mu2_table = tf.Variable(tf.random.normal([nmu2, z2_dim], stddev=1.0))
+        #, trainable=False)
 
         # added trainable = False for both lookup tables to remove the warnings from tf.gather() about backprop
 
         self.n_phones = n_phones
-        self.mu1_table = tf.Variable(tf.random.normal([n_phones, z1_dim], stddev=1.0), trainable=False)
+        self.mu1_table = tf.Variable(tf.random.normal([n_phones, z1_dim], stddev=1.0))
+        #, trainable=False)
         self.phone_occs = tf.Variable(tf.zeros([n_phones]), trainable=False)
 
         # loss factors

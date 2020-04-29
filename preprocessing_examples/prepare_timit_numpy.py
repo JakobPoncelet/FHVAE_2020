@@ -9,7 +9,7 @@ from sphfile import SPHFile
 prepare TIMIT data for FHVAE
 
 ## COMMAND PARAMETERS:
-/users/spraak/spchdata/timit/CDdata /users/spraak/spchdata/timit/CDdata/timit/doc --ftype fbank --out_dir /esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/timit_np_fbank
+/users/spraak/spchdata/timit/CDdata /users/spraak/spchdata/timit/CDdata/timit/doc --ftype fbank --out_dir /esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/timit_np_fbank_4
 """
 
 
@@ -34,6 +34,8 @@ parser.add_argument("--test_spk", type=str, default="./misc/timit/timit_test_spk
         help="path to list of test set speakers")
 parser.add_argument("--fold_phones", type=bool, default=True,
         help="whether to map the 61 phones to 39 phones")
+parser.add_argument("--remove_q", type=bool, default=True,
+        help="whether to remove the glottal stop /q/")
 
 args = parser.parse_args()
 print(args)
@@ -282,6 +284,94 @@ with open(phonetable, "w") as lid:
         lid.write(str(phone_ids[key])+" "+str(key)+"\n")
 
 print("stored all talabs")
+
+# remove the glottal stop /q/
+# if one neighbouring phone is voiced and the other is unvoiced: merge with voiced phoneme
+# if both neighbouring phones are voiced: place boundary of voiced phonemes in middle of /q/
+# if both neighbouring phones are unvoiced: map to /ax/ (a short neutral vowel)
+
+if args.remove_q:
+    voiced_phones = []
+
+    with open('./misc/timit/phone_map_60_48_39.txt', 'r') as tid:
+        line = tid.readline()
+        while line:
+            phon = line.split(' ')[0].rstrip()
+            voicing = line.split(' ')[3].rstrip()
+            if str(voicing) == 'v':
+                voiced_phones.append(int(phone_ids[phon]))
+            line = tid.readline()
+
+    q = int(phone_ids['q'])
+    glottal_talabs = "%s/fac/all_facs_phones_no_q.scp" % args.out_dir
+    glottal_talabs_f = open(glottal_talabs, 'w')
+
+    lines = []
+    with open(talabs, 'r') as lid:
+        line = lid.readline()
+        glottal_talabs_f.write(line)
+        line = lid.readline()
+        while line:
+            # not a filename line
+            if len(line.split(' ')) < 2:
+                for idx, accline in enumerate(lines):
+                    [start, end, phon] = accline
+
+                    # glottal stop present, assumed to be never at very start or end
+                    if int(phon) == q:
+                        [prev_start, prev_end, prev_phon] = lines[idx-1]
+                        [next_start, next_end, next_phon] = lines[idx+1]
+
+                        if prev_phon in voiced_phones:
+                            if next_phon in voiced_phones:
+                                # put new boundary in center of /q/
+                                center = int((start+end)/2)
+                                prev_end = str(center)
+                                next_start = str(center)
+                                phon = None
+                            else:
+                                # merge with previous phone
+                                prev_end = end
+                                phon = None
+                        else:
+                            if next_phon in voiced_phones:
+                                # merge with next phone
+                                next_start = start
+                                phon = None
+                            else:
+                                # map to short neutral vowel
+                                phon = int(phone_ids['ax'])
+
+                        lines[idx-1] = [prev_start, prev_end, prev_phon]
+                        lines[idx] = [start, end, phon]
+                        lines[idx+1] = [next_start, next_end, next_phon]
+
+                for updline in lines:
+                    # discard /q/
+                    if updline[2] is not None:
+                        updline = [str(x) for x in updline]
+                        glottal_talabs_f.write(' '.join(updline)+'\n')
+
+                # reset
+                lines = []
+                # write file name
+                glottal_talabs_f.write(line)
+
+
+            else:
+                lines.append([int(x) for x in line.rstrip().split(' ')])
+
+            line = lid.readline()
+
+
+    glottal_talabs_f.close()
+
+    newname = '%s/fac/all_facs_phones_with_q.scp' % args.out_dir
+    os.rename(talabs, newname)
+    os.rename(glottal_talabs, talabs)
+
+
+print("removed glottal stop /q/")
 
 
 if args.fold_phones:

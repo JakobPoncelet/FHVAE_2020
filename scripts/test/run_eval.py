@@ -34,12 +34,16 @@ from fhvae.models.reg_fhvae_transf import RegFHVAEtransf
 # os.environ["CUDA_VISIBLE_DEVICES"]="0"
 
 '''
-Commands
+Commands (pycharm setup)
 Script path:
 /users/spraak/jponcele/JakobFHVAE/scripts/test/run_eval.py
 
 Parameters:
---expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/exp --save True
+--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/exp_</> --save True
+
+Conda environment:
+Python 3.6 -- conda env 'tf21'
+
 Working directory:
 /users/spraak/jponcele/JakobFHVAE
 '''

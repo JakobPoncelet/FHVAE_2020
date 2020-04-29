@@ -71,6 +71,9 @@ def test_reg(expdir, model, conf, tt_iterator_by_seqs, tt_seqs, tt_dset):
     print("\nCOMPUTING AVERAGE VALUES")
     avg_loss, avg_vals = compute_average_values(model, tt_seqs, conf, create_test_dataset)
 
+    print("\nCOMPUTING VALUES BY PHONE CLASS")
+    z1_by_phone, mu1_by_phone = compute_values_by_phone(model, conf, create_test_dataset, tt_seqs, expdir)
+
     print("\nCOMPUTING VALUES BY SEQUENCE")
     z1_by_seq, z2_by_seq, mu2_by_seq, regpost_by_seq, xin_by_seq, xout_by_seq, xoutv_by_seq, z1reg_by_seq, regpost_by_seq_z1, \
         z2reg_by_seq, bReg_by_seq, cReg_by_seq = compute_values_by_seq(model, conf, create_test_dataset, tt_seqs, expdir)
@@ -135,6 +138,51 @@ def compute_average_values(model, tt_seqs, conf, create_test_dataset):
 
     return avg_loss, avg_vals
 
+def compute_values_by_phone(model, conf, create_test_dataset, seqs, expdir):
+
+    z1_by_phone = defaultdict(list)
+    covar_by_phone = {'cov_det':{}, 'diagcov_det':{}, 'cov_logdet':{}, 'diagcov_logdet':{}}
+    diagcovdet_by_phone = dict()
+    phone_occs = defaultdict(int)
+    mu1_by_phone = dict()
+
+    complete_Test_Dataset = create_test_dataset(seqs=seqs)
+
+    for _, x, _, _, b, _ in complete_Test_Dataset:
+        _, _, _, _, _, _, qz1_x, _ = model.encoder(x)
+        z1_mu = qz1_x[0]
+        for idx in range(0, int(b.get_shape().as_list()[0])):
+            ph = str(b[idx, 0].numpy())
+            z1_by_phone[ph].append(z1_mu[idx, :])
+            phone_occs[ph] += 1
+
+    # compute within-class covariance matrix and compute the determinant of this covariance matrix
+    # + the determinant of the diagonal of this matrix
+    # + logdeterminants
+    for ph, all_z1s in z1_by_phone.items():
+        cov_mat = np.cov(np.stack(all_z1s, axis=0), rowvar=False)
+        covar_by_phone['cov_det'][ph] = np.linalg.det(cov_mat)
+        covar_by_phone['diagcov_det'][ph] = np.prod(np.diag(cov_mat))
+        (sign, logdet) = np.linalg.slogdet(cov_mat)
+        covar_by_phone['cov_logdet'][ph] = logdet
+        (sign, logdet) = np.linalg.slogdet(np.diag(np.diag(cov_mat)))
+        covar_by_phone['diagcov_logdet'][ph] = logdet
+
+    print('Average determinant of covariance matrix per phone is %f'
+          % np.average(list(covar_by_phone['cov_det'].values())))
+    print('Average determinant of diagonal covariance matrix per phone is %f'
+          % np.average(list(covar_by_phone['diagcov_det'].values())))
+    print('Average log-determinant of covariance matrix per phone is %f'
+          % np.average(list(covar_by_phone['cov_logdet'].values())))
+    print('Average log-determinant of diagonal covariance matrix per phone is %f'
+          % np.average(list(covar_by_phone['diagcov_logdet'].values())))
+
+    # posterior map estimation of mu1 according to phone class
+    r = np.exp(model.pz1_stddev ** 2) / np.exp(model.pmu1_stddev ** 2)
+    for ph, all_z1s in z1_by_phone.items():
+        mu1_by_phone[ph] = np.sum(all_z1s, axis=0) / (phone_occs[ph] + r)
+
+    return z1_by_phone, mu1_by_phone
 
 def compute_values_by_seq(model, conf, create_test_dataset, seqs, expdir):
 
@@ -418,7 +466,7 @@ def visualize_reg_vals(expdir, model, seqs, conf, z1_by_seq, z2_by_seq, mu2_by_s
 
     if True:
         # tsne z1 and z2
-        print("t-SNE analysis on latent variables")
+        print("t-SNE analysis on latent variables (over entire sequences)")
         n = [len(z1_by_seq[seq]) for seq in seqs]
         z1 = np.concatenate([z1_by_seq[seq] for seq in seqs], axis=0)
         z2 = np.concatenate([z2_by_seq[seq] for seq in seqs], axis=0)

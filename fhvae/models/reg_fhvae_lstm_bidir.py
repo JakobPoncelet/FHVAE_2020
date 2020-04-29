@@ -8,7 +8,7 @@ class RegFHVAE_bidirectional(tf.keras.Model):
 
     def __init__(self, z1_dim=32, z2_dim=32, z1_rhus=[256, 256], z2_rhus=[256, 256], x_rhus=[256, 256],
                  nmu2=5000, z1_nlabs={}, z2_nlabs={}, mu_nl=None,logvar_nl=None, tr_shape=(20, 80),
-                 bs=256, alpha_dis_z1=1.0, alpha_dis_z2=1.0, alpha_reg_b=1.0, alpha_reg_c=1.0, n_phones=62, name="autoencoder", **kwargs):
+                 bs=256, alpha_dis_z1=1.0, alpha_dis_z2=1.0, alpha_reg_b=1.0, alpha_reg_c=1.0, n_phones=62, bump_logpmu1=1.0, name="autoencoder", **kwargs):
 
         super(RegFHVAE_bidirectional, self).__init__(name=name, **kwargs)
 
@@ -27,17 +27,21 @@ class RegFHVAE_bidirectional(tf.keras.Model):
         # nlabs = dictionary with for each label, the dimension of the regularization vector
         self.z1_nlabs, self.z2_nlabs = z1_nlabs, z2_nlabs
         self.nmu2 = nmu2
-        self.mu2_table = tf.Variable(tf.random.normal([nmu2, z2_dim], stddev=1.0), trainable=False)
+        self.mu2_table = tf.Variable(tf.random.normal([nmu2, z2_dim], stddev=1.0))
+        #, trainable=False)
 
         # Trainable=False to remove warnings about tf.gather()
 
         self.n_phones = n_phones
-        self.mu1_table = tf.Variable(tf.random.normal([n_phones, z1_dim], stddev=1.0), trainable=False)
-        self.phone_occs = tf.Variable(tf.zeros([n_phones]), trainable=False)
+        self.mu1_table = tf.Variable(tf.random.normal([n_phones, z1_dim], stddev=1.0))
+        #, trainable=False)
+        self.phone_occs = tf.Variable(tf.zeros([n_phones]))
+        # , trainable=False)
 
         # loss factors
         self.alpha_dis_z1, self.alpha_dis_z2 = alpha_dis_z1, alpha_dis_z2
         self.alpha_reg_b, self.alpha_reg_c = alpha_reg_b, alpha_reg_c
+        self.bump_logpmu1 = bump_logpmu1
 
         # init net
         self.encoder = Encoder(self.z1_dim, self.z2_dim, self.z1_rhus, self.z2_rhus, self.tr_shape, self.mu_nl, self.logvar_nl)
@@ -80,6 +84,7 @@ class RegFHVAE_bidirectional(tf.keras.Model):
         # variational lower bound
         log_pmu1 = log_normal_pdf(mu1, pmu1[0], pmu1[1], raxis=1)
         log_pmu1 = log_pmu1 / (n * num_seqs)
+        log_pmu1 = self.bump_logpmu1 * log_pmu1
         log_pmu2 = log_normal_pdf(mu2, pmu2[0], pmu2[1], raxis=1)
         log_pmu2 = log_pmu2 / n
         log_px_z = log_normal_pdf(x, px_z[0], px_z[1], raxis=(1, 2))
@@ -116,7 +121,7 @@ class RegFHVAE_bidirectional(tf.keras.Model):
         log_b_loss = tf.reduce_sum(input_tensor=log_b, axis=1)
         log_c_loss = tf.reduce_sum(input_tensor=log_c, axis=1)
 
-        # total loss
+        # total loss (as mean of all losses)
         loss = -1 * tf.reduce_mean(
             input_tensor=lb + self.alpha_dis_z2 * log_qy_mu2 + self.alpha_dis_z1 * log_qy_mu1 + self.alpha_reg_b * log_b_loss + self.alpha_reg_c * log_c_loss)
 

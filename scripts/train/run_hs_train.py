@@ -30,7 +30,6 @@ from fhvae.models.reg_fhvae_lstm_unidir import RegFHVAE_unidirectional
 from fhvae.models.reg_fhvae_lstm_bidir import RegFHVAE_bidirectional
 from fhvae.models.reg_fhvae_lstm_atten import RegFHVAE_attention
 from fhvae.models.reg_fhvae_transf import RegFHVAEtransf
-
 # tf.autograph.set_verbosity(10)
 
 # For debugging on different GPU: os.environ["CUDA_VISIBLE_DEVICES"]="0,1"
@@ -42,7 +41,12 @@ Script path:
 /users/spraak/jponcele/JakobFHVAE/scripts/train/run_hs_train.py
 
 Parameters:
---expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/exp --config /users/spraak/jponcele/JakobFHVAE/configs/timit/config_lstm_complete.cfg
+--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/exp_</> 
+--config configs/timit/config_bidirectional_39phones.cfg
+
+Conda environment:
+Python 3.6 -- conda env 'tf21'
+
 Working directory:
 /users/spraak/jponcele/JakobFHVAE
 '''
@@ -109,7 +113,7 @@ def main(expdir, configfile):
         model = RegFHVAE_unidirectional(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], z1_rhus=conf['z1_rhus'], z2_rhus=conf['z2_rhus'], x_rhus=conf['x_rhus'], nmu2=conf['nmu2'], z1_nlabs=b_n, z2_nlabs=c_n, mu_nl=None, logvar_nl=None, tr_shape=tr_shape, bs=conf['batch_size'], alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones)
 
     if conf['model'] == 'LSTM_bidirectional':
-        model = RegFHVAE_bidirectional(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], z1_rhus=conf['z1_rhus'], z2_rhus=conf['z2_rhus'], x_rhus=conf['x_rhus'], nmu2=conf['nmu2'], z1_nlabs=b_n, z2_nlabs=c_n, mu_nl=None, logvar_nl=None, tr_shape=tr_shape, bs=conf['batch_size'], alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'],alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones)
+        model = RegFHVAE_bidirectional(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], z1_rhus=conf['z1_rhus'], z2_rhus=conf['z2_rhus'], x_rhus=conf['x_rhus'], nmu2=conf['nmu2'], z1_nlabs=b_n, z2_nlabs=c_n, mu_nl=None, logvar_nl=None, tr_shape=tr_shape, bs=conf['batch_size'], alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones, bump_logpmu1=conf['bump_logpmu1'])
 
     if conf['model'] == 'transformer':
         model = RegFHVAEtransf(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], nmu2=conf['nmu2'], x_rhus=conf['x_rhus'], tr_shape=tr_shape, z1_nlabs=b_n, z2_nlabs=c_n, mu_nl=None, logvar_nl=None, d_model=conf['d_model'], num_enc_layers=conf['num_enc_layers'], num_heads=conf['num_heads'], dff=conf['dff'], pe_max_len=conf['pe_max_len'], rate=conf['rate'], alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones)

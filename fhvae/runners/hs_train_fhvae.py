@@ -190,7 +190,6 @@ def hs_train_reg(exp_dir, model, conf, tr_iterator_by_seqs, dt_iterator, tr_dset
                         pid.write("Loss: %f \t \t lb=%f \t log_qy_mu2=%f \t log_qy_mu1=%f \t log_b=%f \t log_c=%f \n" % (step_loss, -tf.reduce_mean(lb), -tf.reduce_mean(log_qy_mu2), -tf.reduce_mean(log_qy_mu1), -tf.reduce_mean(log_b_loss), -tf.reduce_mean(log_c_loss)))
                         pid.write("\t lower bound components: \t log_pmu2=%f \t log_pmu1=%f \t neg_kld_z2=%f \t neg_kld_z1=%f \t log_px_z=%f \n" % (-tf.reduce_mean(log_pmu2), -tf.reduce_mean(log_pmu1), -tf.reduce_mean(neg_kld_z2), -tf.reduce_mean(neg_kld_z1), -tf.reduce_mean(log_px_z)))
 
-
         # write components of first loss only in later epochs
         with open(comploss_file, "a+") as pid:
             pid.write("EPOCH: %i \n" % int(epoch))
