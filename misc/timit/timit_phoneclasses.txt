@@ -1,5 +1,5 @@
 #BroadPhoneClass SpecificPhoneClass PhoneSymbol https://groups.csail.mit.edu/sls/publications/1998/phdthesis-drew.pdf
-SON	VS	aa ae ah ao aw ax axh axr ay eh er ey ih ix iy ow oy uh uw ux el l r w y hh hv ax-h
+SON	VS	aa ae ah ao aw ax axr ay eh er ey ih ix iy ow oy uh uw ux el l r w y hh hv ax-h
 SON	NF	em en eng m n ng nx dx
 OBS	SF	s z sh zh ch jh
 OBS	WF	v f dh th hh hv

@@ -2,26 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed577b1c-d84e-4f0f-b92d-3d8eda990d38" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/condor/jobfile_all.job" beforeDir="false" afterPath="$PROJECT_DIR$/condor/jobfile_all.job" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/condor/run_all.sh" beforeDir="false" afterPath="$PROJECT_DIR$/condor/run_all.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/classifier/config_classifier_timit_39phones.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/classifier/config_classifier_timit_39phones.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_attention_39phones.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_attention_39phones.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_q.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/timit/config_lstm_complete.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_lstm_complete.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_unidirectional_39phones.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_unidirectional_39phones.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_atten.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_atten.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_unidir.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_unidir.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_transf.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_transf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/runners/hs_train_fhvae.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/runners/hs_train_fhvae.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/runners/test_fhvae.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/runners/test_fhvae.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/timit/phone_map_60_48_39.txt" beforeDir="false" afterPath="$PROJECT_DIR$/misc/timit/phone_map_60_48_39.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/timit/timit_phoneclasses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/misc/timit/timit_phoneclasses.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preprocessing_examples/prepare_timit_numpy.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing_examples/prepare_timit_numpy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/classifier/load_classifier_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classifier/load_classifier_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/classifier/run_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classifier/run_classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/test/run_eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/test/run_eval.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train/run_hs_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train/run_hs_train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/train/hs_train_loaders.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train/hs_train_loaders.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,33 +18,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fhvae/runners/hs_train_fhvae.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="254" lean-forward="true" selection-start-line="254" selection-end-line="254" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="80" column="68" lean-forward="true" selection-start-line="80" selection-start-column="68" selection-end-line="80" selection-end-column="68" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/train/run_hs_train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2295">
+            <state relative-caret-position="304">
               <caret line="134" column="16" lean-forward="true" selection-start-line="134" selection-start-column="16" selection-end-line="134" selection-end-column="16" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
@@ -93,17 +55,22 @@
         <option value="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_2.cfg" />
         <option value="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_3.cfg" />
         <option value="$PROJECT_DIR$/fhvae/runners/test_fhvae.py" />
-        <option value="$PROJECT_DIR$/configs/timit/config_lstm_complete.cfg" />
         <option value="$PROJECT_DIR$/scripts/classifier/run_classifier.py" />
         <option value="$PROJECT_DIR$/scripts/train/run_hs_train.py" />
         <option value="$PROJECT_DIR$/scripts/test/run_eval.py" />
-        <option value="$PROJECT_DIR$/preprocessing_examples/prepare_timit_numpy.py" />
         <option value="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir.py" />
         <option value="$PROJECT_DIR$/fhvae/runners/hs_train_fhvae.py" />
+        <option value="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_q.cfg" />
+        <option value="$PROJECT_DIR$/scripts/train/hs_train_loaders.py" />
+        <option value="$PROJECT_DIR$/configs/timit/config_lstm_complete.cfg" />
+        <option value="$PROJECT_DIR$/misc/timit/phone_map_60_48_39.txt" />
+        <option value="$PROJECT_DIR$/misc/timit/timit_phoneclasses.txt" />
+        <option value="$PROJECT_DIR$/preprocessing_examples/prepare_timit_numpy.py" />
+        <option value="$PROJECT_DIR$/fhvae/datasets/seg_dataset.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="128" />
     <option name="y" value="86" />
     <option name="width" value="768" />
@@ -121,17 +88,6 @@
             <path>
               <item name="JakobFHVAE" type="b2602c69:ProjectViewProjectNode" />
               <item name="JakobFHVAE" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JakobFHVAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JakobFHVAE" type="462c0819:PsiDirectoryNode" />
-              <item name="fhvae" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JakobFHVAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JakobFHVAE" type="462c0819:PsiDirectoryNode" />
-              <item name="fhvae" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -244,14 +200,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="28" width="1024" height="702" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.78851175" visible="true" weight="0.191" />
-      <window_info id="Structure" order="1" sideWeight="0.21148825" side_tool="true" visible="true" weight="0.191" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7860963" visible="true" weight="0.194" />
+      <window_info id="Structure" order="1" sideWeight="0.21390374" side_tool="true" visible="true" weight="0.194" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31729054" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31729054" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.399287" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -306,13 +261,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/misc/timit/phone_map_60_48_39.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/classifier/load_classifier_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-60">
@@ -476,52 +424,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_lstm_complete.cfg">
+    <entry file="file://$PROJECT_DIR$/find_glottal.py" />
+    <entry file="file://$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_q.cfg">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        <state relative-caret-position="1050">
+          <caret line="69" column="27" lean-forward="true" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="27" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing_examples/prepare_timit_numpy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3654">
-          <caret line="181" column="17" lean-forward="true" selection-start-line="181" selection-start-column="17" selection-end-line="181" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/find_glottal.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="80" column="68" lean-forward="true" selection-start-line="80" selection-start-column="68" selection-end-line="80" selection-end-column="68" />
+        <state relative-caret-position="297">
+          <caret line="80" column="68" selection-start-line="80" selection-start-column="68" selection-end-line="80" selection-end-column="68" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/train/run_hs_train.py">
+    <entry file="file://$PROJECT_DIR$/fhvae/runners/hs_train_fhvae.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2295">
-          <caret line="134" column="16" lean-forward="true" selection-start-line="134" selection-start-column="16" selection-end-line="134" selection-end-column="16" />
+        <state relative-caret-position="279">
+          <caret line="79" column="46" selection-start-line="79" selection-start-column="46" selection-end-line="79" selection-end-column="46" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fhvae/runners/hs_train_fhvae.py">
+    <entry file="file://$PROJECT_DIR$/misc/timit/phone_map_60_48_39.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="254" lean-forward="true" selection-start-line="254" selection-end-line="254" />
+        <state relative-caret-position="75">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/misc/timit/timit_phoneclasses.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/prepare_timit_numpy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="471" column="67" selection-start-line="471" selection-start-column="67" selection-end-line="471" selection-end-column="67" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/timit/config_lstm_complete.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="76" column="46" selection-start-line="76" selection-start-column="46" selection-end-line="76" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fhvae/datasets/seq_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5580">
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/train/hs_train_loaders.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="55" column="105" selection-start-line="55" selection-start-column="105" selection-end-line="55" selection-end-column="105" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fhvae/datasets/seg_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/train/run_hs_train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="134" column="16" lean-forward="true" selection-start-line="134" selection-start-column="16" selection-end-line="134" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
