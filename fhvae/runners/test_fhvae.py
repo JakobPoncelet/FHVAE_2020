@@ -89,7 +89,7 @@ def test_reg(expdir, model, conf, tt_iterator_by_seqs, tt_seqs, tt_dset):
                        xout_by_seq, xoutv_by_seq, z1reg_by_seq)
 
     print("\nVISUALIZING TSNE BY LABEL")
-    tsne_by_label(expdir, model, conf, create_test_dataset, tt_seqs, tt_dset, bReg_by_seq)
+    tsne_by_label(expdir, model, conf, create_test_dataset, tt_seqs, tt_dset, bReg_by_seq, z1_by_phone)
 
     print("\nFINISHED\nResults stored in %s/test" % expdir)
 
@@ -482,7 +482,7 @@ def visualize_reg_vals(expdir, model, seqs, conf, z1_by_seq, z2_by_seq, mu2_by_s
                      "%s/test/img/z2_tsne_%03d.png" % (expdir, p))
 
 
-def tsne_by_label(expdir, model, conf, create_test_dataset, seqs, tt_dset, bReg_by_seq):
+def tsne_by_label(expdir, model, conf, create_test_dataset, seqs, tt_dset, bReg_by_seq, z1_by_phone):
 
     if len(seqs) > 25:
         seqs = sorted(list(np.random.choice(seqs, 25, replace=False)))
@@ -505,15 +505,17 @@ def tsne_by_label(expdir, model, conf, create_test_dataset, seqs, tt_dset, bReg_
     # tsne z1 and z2
     print("t-SNE analysis on latent variables by label")
     n = [len(z1_by_seq[seq]) for seq in seqs]
-    z1 = np.concatenate([z1_by_seq[seq] for seq in seqs], axis=0)
+    z1 = np.concatenate([z1_by_seq[seq] for seq in seqs], axis=0)  # (379x32)
     z2 = np.concatenate([z2_by_seq[seq] for seq in seqs], axis=0)
 
     p = 30
     tsne = TSNE(n_components=2, verbose=0, perplexity=p, n_iter=1000)
-    z1_tsne_by_seq = dict(list(zip(seqs, _unflatten(tsne.fit_transform(z1), n))))
+    z1_tsne_by_seq = dict(list(zip(seqs, _unflatten(tsne.fit_transform(z1), n))))  # dict met voor elke sequence de unflattened tsne fit transform (vb (27x2))
 
-    for gen_fac, seq2lab in list(tt_dset.labs_d.items()):
-        _labs, _z1 = _join(z1_tsne_by_seq, seq2lab)
+    for gen_fac, seq2lab in list(tt_dset.labs_d.items()):  # gender
+        _labs, _z1 = _join(z1_tsne_by_seq, seq2lab)  # seq2lab: dict met seq en label (vb 'f')
+        # labs = ['f', 'm'] list
+        # z1 = list of 2 arrays, both 165x2
         scatter_plot(_z1, _labs, gen_fac,
                      "%s/test/img/tsne_by_label_z1_%s_%03d.png" % (expdir, gen_fac, p))
 
@@ -526,6 +528,8 @@ def tsne_by_label(expdir, model, conf, create_test_dataset, seqs, tt_dset, bReg_
     for gen_talab, seq2talabseq in list(tt_dset.talabseqs_d_new.items()):
         idx = list(conf['b_n'].keys()).index(gen_talab)
         _talabs, _z1 = _join_talab(z1_tsne_by_seq, bReg_by_seq, tt_dset.talab_vals[gen_talab], idx)
+        #talabs: vb ['SIL, SON, 'OBS']
+        # z1: vb list van 3 arrays, elk (96x2)
         scatter_plot(_z1, _talabs, gen_talab,
                      "%s/test/img/tsne_by_label_z1_%s_%03d.png" % (expdir, gen_talab, p))
 
@@ -539,6 +543,20 @@ def tsne_by_label(expdir, model, conf, create_test_dataset, seqs, tt_dset, bReg_
     #     _talabs, _z2 = _join_talab(z2_tsne_by_seq, seq2talabseq.seq2talabseq, tt_dset.talab_vals[gen_talab])
     #     scatter_plot(_z2, _talabs, gen_talab,
     #                  "%s/test/img/tsne_by_label_z2_%s_%03d.png" % (expdir, gen_talab, p))
+
+
+    # plot all z1s of some phones
+    phones = list(z1_by_phone.keys())
+    if len(phones) > 5:
+        phones = sorted(list(np.random.choice(phones, 5, replace=False)))
+
+    n = [len(z1_by_phone[phon]) for phon in phones]
+    z1_phon = np.concatenate([z1_by_phone[phon] for phon in phones], axis=0)
+    z1_tsne_by_phone = dict(list(zip(phones, _unflatten(tsne.fit_transform(z1_phon), n))))
+
+    _z1_phon = [z1_tsne_by_phone[phon] for phon in phones]
+    scatter_plot(_z1_phon, phones, 'phonelist',
+                 "%s/test/img/tsne_of_z1_by_phone_%03d.png" % (expdir, p))
 
 
 def estimate_mu1_mu2_dict(model, dataset, mu1_table, mu2_table, nphones, nsegs, tr_shape):

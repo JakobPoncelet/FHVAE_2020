@@ -53,7 +53,7 @@ def _load_reg(tr_dset, dt_dset):
         _iterator = dt_dset.iterator(bs, seqs=dt_dset.seqlist)
 
         for key, feats, lens, lab, talabs in _iterator:
-            yield np.asarray(key), np.asarray(feats), np.asarray(lens), np.asarray(lab), np.asarray(talab)
+            yield np.asarray(key), np.asarray(feats), np.asarray(lens), np.asarray(lab), np.asarray(talabs)
 
 
     tr_nseqs = len(tr_dset.seqlist)

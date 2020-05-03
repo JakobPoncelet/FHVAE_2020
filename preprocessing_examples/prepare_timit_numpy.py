@@ -52,137 +52,137 @@ with open(args.dev_spk) as f:
     dt_spks = [line.rstrip().lower() for line in f]
 with open(args.test_spk) as f:
     tt_spks = [line.rstrip().lower() for line in f]
-#
-# # convert sph to wav and dump scp
-# wav_dir = os.path.abspath("%s/wav" % args.out_dir)
-# tr_scp = "%s/train/wav.scp" % args.out_dir
-# dt_scp = "%s/dev/wav.scp" % args.out_dir
-# tt_scp = "%s/test/wav.scp" % args.out_dir
-#
-# maybe_makedir(wav_dir)
-# maybe_makedir(os.path.dirname(tr_scp))
-# maybe_makedir(os.path.dirname(dt_scp))
-# maybe_makedir(os.path.dirname(tt_scp))
-#
-# tr_f = open(tr_scp, "w")
-# dt_f = open(dt_scp, "w")
-# tt_f = open(tt_scp, "w")
-#
-# paths = []
-# utts_per_spk = {}
-# for root, _, fnames in sorted(os.walk(args.timit_wav_dir)):
-#     spk = root.split("/")[-1].lower()
-#     if spk in dt_spks:
-#         f = dt_f
-#     elif spk in tt_spks:
-#         f = tt_f
-#     else:
-#         f = tr_f
-#
-#     uttids = []
-#     for fname in fnames:
-#         if fname.endswith(".wav") or fname.endswith(".WAV"):
-#             sph_path = "%s/%s" % (root, fname)
-#             path = "%s/%s_%s" % (wav_dir, spk, fname)
-#             uttid = "%s_%s" % (spk, os.path.splitext(fname)[0])
-#             f.write("%s %s\n" % (uttid, path))
-#             sph = SPHFile(sph_path)
-#             sph.write_wav(path)
-#             uttids.append(uttid)
-#
-#     utts_per_spk[spk] = uttids
-#
-# tr_f.close()
-# dt_f.close()
-# tt_f.close()
-#
-# print("converted to wav and dumped scp files")
-#
-# # compute feature
-# feat_dir = os.path.abspath("%s/%s" % (args.out_dir, args.ftype))
-# maybe_makedir(feat_dir)
-#
-# def compute_feature(name):
-#     cmd = ["python", "./scripts/preprocess/prepare_numpy_data.py", "--ftype=%s" % args.ftype]
-#     cmd += ["%s/%s/wav.scp" % (args.out_dir, name), feat_dir]
-#     cmd += ["%s/%s/feats.scp" % (args.out_dir, name)]
-#     cmd += ["%s/%s/len.scp" % (args.out_dir, name)]
-#
-#     p = subprocess.Popen(cmd)
-#     if p.wait() != 0:
-#         raise RuntimeError("Non-zero (%d) return code for `%s`" % (p.returncode, " ".join(cmd)))
-#
-# for name in ["train", "dev", "test"]:
-#     compute_feature(name)
-#
-# print("computed feature")
-#
-# # put the regularizing factors in a file
-# facs = "%s/fac/all_facs.scp" % args.out_dir
-# facs_gender = "%s/fac/all_facs_gender.scp" % args.out_dir
-# facs_reg = "%s/fac/all_facs_region.scp" % args.out_dir
-# facs_spk = "%s/fac/all_facs_spk.scp" % args.out_dir
-# tr_facs = "%s/fac/train_facs.scp" % args.out_dir
-# dt_facs = "%s/fac/dev_facs.scp" % args.out_dir
-# tt_facs = "%s/fac/test_facs.scp" % args.out_dir
-# maybe_makedir(os.path.dirname(facs))
-# maybe_makedir(os.path.dirname(facs_gender))
-# maybe_makedir(os.path.dirname(facs_reg))
-# maybe_makedir(os.path.dirname(facs_spk))
-# maybe_makedir(os.path.dirname(tr_facs))
-# maybe_makedir(os.path.dirname(dt_facs))
-# maybe_makedir(os.path.dirname(tt_facs))
-#
-# facs_f = open(facs, "w")
-# facs_gender_f = open(facs_gender, "w")
-# facs_reg_f = open(facs_reg, "w")
-# facs_spk_f = open(facs_spk, "w")
-# tr_facs_f = open(tr_facs, "w")
-# dt_facs_f = open(dt_facs, "w")
-# tt_facs_f = open(tt_facs, "w")
-#
-# tr_facs_f.write("#seq gender region\n")
-# dt_facs_f.write("#seq gender region\n")
-# tt_facs_f.write("#seq gender region\n")
-#
-# info_f = open(os.path.join(args.timit_doc_dir, 'spkrinfo.txt'), "r")
-#
-# for x in range(0, 40, 1):  # the first 40 lines are header lines in my spkrinfo.txt
-#     line = info_f.readline()
-#
-# while line:
-#     spk = (line.split("  ")[0]).lower()
-#     gender = (line.split("  ")[1]).lower()
-#     reg = line.split("  ")[2]
-#     spkid = gender+spk
-#
-#     if spkid in dt_spks:
-#         fff = dt_facs_f
-#     elif spkid in tt_spks:
-#         fff = tt_facs_f
-#     else:
-#         fff = tr_facs_f
-#
-#     for uttid in utts_per_spk[spkid]:
-#         facs_f.write(uttid+" "+gender+" "+reg+"\n")
-#         fff.write(uttid+" "+gender+" "+reg+"\n")
-#         facs_gender_f.write(uttid+" "+gender+"\n")
-#         facs_reg_f.write(uttid+" "+reg+"\n")
-#         facs_spk_f.write(uttid+" "+spkid+"\n")
-#
-#     line = info_f.readline()
-#
-# info_f.close()
-#
-# facs_f.close()
-# facs_reg_f.close()
-# facs_gender_f.close()
-# facs_spk_f.close()
-# tr_facs_f.close()
-# dt_facs_f.close()
-# tt_facs_f.close()
-#
-# print("stored all regularizing factors")
+
+# convert sph to wav and dump scp
+wav_dir = os.path.abspath("%s/wav" % args.out_dir)
+tr_scp = "%s/train/wav.scp" % args.out_dir
+dt_scp = "%s/dev/wav.scp" % args.out_dir
+tt_scp = "%s/test/wav.scp" % args.out_dir
+
+maybe_makedir(wav_dir)
+maybe_makedir(os.path.dirname(tr_scp))
+maybe_makedir(os.path.dirname(dt_scp))
+maybe_makedir(os.path.dirname(tt_scp))
+
+tr_f = open(tr_scp, "w")
+dt_f = open(dt_scp, "w")
+tt_f = open(tt_scp, "w")
+
+paths = []
+utts_per_spk = {}
+for root, _, fnames in sorted(os.walk(args.timit_wav_dir)):
+    spk = root.split("/")[-1].lower()
+    if spk in dt_spks:
+        f = dt_f
+    elif spk in tt_spks:
+        f = tt_f
+    else:
+        f = tr_f
+
+    uttids = []
+    for fname in fnames:
+        if fname.endswith(".wav") or fname.endswith(".WAV"):
+            sph_path = "%s/%s" % (root, fname)
+            path = "%s/%s_%s" % (wav_dir, spk, fname)
+            uttid = "%s_%s" % (spk, os.path.splitext(fname)[0])
+            f.write("%s %s\n" % (uttid, path))
+            sph = SPHFile(sph_path)
+            sph.write_wav(path)
+            uttids.append(uttid)
+
+    utts_per_spk[spk] = uttids
+
+tr_f.close()
+dt_f.close()
+tt_f.close()
+
+print("converted to wav and dumped scp files")
+
+# compute feature
+feat_dir = os.path.abspath("%s/%s" % (args.out_dir, args.ftype))
+maybe_makedir(feat_dir)
+
+def compute_feature(name):
+    cmd = ["python", "./scripts/preprocess/prepare_numpy_data.py", "--ftype=%s" % args.ftype]
+    cmd += ["%s/%s/wav.scp" % (args.out_dir, name), feat_dir]
+    cmd += ["%s/%s/feats.scp" % (args.out_dir, name)]
+    cmd += ["%s/%s/len.scp" % (args.out_dir, name)]
+
+    p = subprocess.Popen(cmd)
+    if p.wait() != 0:
+        raise RuntimeError("Non-zero (%d) return code for `%s`" % (p.returncode, " ".join(cmd)))
+
+for name in ["train", "dev", "test"]:
+    compute_feature(name)
+
+print("computed feature")
+
+# put the regularizing factors in a file
+facs = "%s/fac/all_facs.scp" % args.out_dir
+facs_gender = "%s/fac/all_facs_gender.scp" % args.out_dir
+facs_reg = "%s/fac/all_facs_region.scp" % args.out_dir
+facs_spk = "%s/fac/all_facs_spk.scp" % args.out_dir
+tr_facs = "%s/fac/train_facs.scp" % args.out_dir
+dt_facs = "%s/fac/dev_facs.scp" % args.out_dir
+tt_facs = "%s/fac/test_facs.scp" % args.out_dir
+maybe_makedir(os.path.dirname(facs))
+maybe_makedir(os.path.dirname(facs_gender))
+maybe_makedir(os.path.dirname(facs_reg))
+maybe_makedir(os.path.dirname(facs_spk))
+maybe_makedir(os.path.dirname(tr_facs))
+maybe_makedir(os.path.dirname(dt_facs))
+maybe_makedir(os.path.dirname(tt_facs))
+
+facs_f = open(facs, "w")
+facs_gender_f = open(facs_gender, "w")
+facs_reg_f = open(facs_reg, "w")
+facs_spk_f = open(facs_spk, "w")
+tr_facs_f = open(tr_facs, "w")
+dt_facs_f = open(dt_facs, "w")
+tt_facs_f = open(tt_facs, "w")
+
+tr_facs_f.write("#seq gender region\n")
+dt_facs_f.write("#seq gender region\n")
+tt_facs_f.write("#seq gender region\n")
+
+info_f = open(os.path.join(args.timit_doc_dir, 'spkrinfo.txt'), "r")
+
+for x in range(0, 40, 1):  # the first 40 lines are header lines in my spkrinfo.txt
+    line = info_f.readline()
+
+while line:
+    spk = (line.split("  ")[0]).lower()
+    gender = (line.split("  ")[1]).lower()
+    reg = line.split("  ")[2]
+    spkid = gender+spk
+
+    if spkid in dt_spks:
+        fff = dt_facs_f
+    elif spkid in tt_spks:
+        fff = tt_facs_f
+    else:
+        fff = tr_facs_f
+
+    for uttid in utts_per_spk[spkid]:
+        facs_f.write(uttid+" "+gender+" "+reg+"\n")
+        fff.write(uttid+" "+gender+" "+reg+"\n")
+        facs_gender_f.write(uttid+" "+gender+"\n")
+        facs_reg_f.write(uttid+" "+reg+"\n")
+        facs_spk_f.write(uttid+" "+spkid+"\n")
+
+    line = info_f.readline()
+
+info_f.close()
+
+facs_f.close()
+facs_reg_f.close()
+facs_gender_f.close()
+facs_spk_f.close()
+tr_facs_f.close()
+dt_facs_f.close()
+tt_facs_f.close()
+
+print("stored all regularizing factors")
 
 # put the phones with start/end times in a file
 talabs = "%s/fac/all_facs_phones.scp" % args.out_dir
