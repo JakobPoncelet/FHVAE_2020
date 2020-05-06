@@ -107,16 +107,16 @@ def main(expdir, configfile):
 
     # initialize the model
     if conf['model'] == 'LSTM_attention':
-        model = RegFHVAE_attention(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], z1_rhus=conf['z1_rhus'], z2_rhus=conf['z2_rhus'], x_rhus=conf['x_rhus'], nmu2=conf['nmu2'], z1_nlabs=b_n, z2_nlabs=c_n, mu_nl=None, logvar_nl=None, tr_shape=tr_shape, bs=conf['batch_size'], alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones)
+        model = RegFHVAE_attention(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], z1_rhus=conf['z1_rhus'], z2_rhus=conf['z2_rhus'], x_rhus=conf['x_rhus'], nmu2=conf['nmu2'], z1_nlabs=b_n, z2_nlabs=c_n, mu_nl=None, logvar_nl=None, tr_shape=tr_shape, bs=conf['batch_size'], alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones, priors=conf['priors'])
 
     if conf['model'] == 'LSTM_unidirectional':
-        model = RegFHVAE_unidirectional(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], z1_rhus=conf['z1_rhus'], z2_rhus=conf['z2_rhus'], x_rhus=conf['x_rhus'], nmu2=conf['nmu2'], z1_nlabs=b_n, z2_nlabs=c_n, mu_nl=None, logvar_nl=None, tr_shape=tr_shape, bs=conf['batch_size'], alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones)
+        model = RegFHVAE_unidirectional(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], z1_rhus=conf['z1_rhus'], z2_rhus=conf['z2_rhus'], x_rhus=conf['x_rhus'], nmu2=conf['nmu2'], z1_nlabs=b_n, z2_nlabs=c_n, mu_nl=None, logvar_nl=None, tr_shape=tr_shape, bs=conf['batch_size'], alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones, priors=conf['priors'])
 
     if conf['model'] == 'LSTM_bidirectional':
-        model = RegFHVAE_bidirectional(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], z1_rhus=conf['z1_rhus'], z2_rhus=conf['z2_rhus'], x_rhus=conf['x_rhus'], nmu2=conf['nmu2'], z1_nlabs=b_n, z2_nlabs=c_n, mu_nl=None, logvar_nl=None, tr_shape=tr_shape, bs=conf['batch_size'], alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones, bump_logpmu1=conf['bump_logpmu1'])
+        model = RegFHVAE_bidirectional(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], z1_rhus=conf['z1_rhus'], z2_rhus=conf['z2_rhus'], x_rhus=conf['x_rhus'], nmu2=conf['nmu2'], z1_nlabs=b_n, z2_nlabs=c_n, mu_nl=None, logvar_nl=None, tr_shape=tr_shape, bs=conf['batch_size'], alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones, bump_logpmu1=conf['bump_logpmu1'], priors=conf['priors'])
 
     if conf['model'] == 'transformer':
-        model = RegFHVAEtransf(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], nmu2=conf['nmu2'], x_rhus=conf['x_rhus'], tr_shape=tr_shape, z1_nlabs=b_n, z2_nlabs=c_n, mu_nl=None, logvar_nl=None, d_model=conf['d_model'], num_enc_layers=conf['num_enc_layers'], num_heads=conf['num_heads'], dff=conf['dff'], pe_max_len=conf['pe_max_len'], rate=conf['rate'], alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones)
+        model = RegFHVAEtransf(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], nmu2=conf['nmu2'], x_rhus=conf['x_rhus'], tr_shape=tr_shape, z1_nlabs=b_n, z2_nlabs=c_n, mu_nl=None, logvar_nl=None, d_model=conf['d_model'], num_enc_layers=conf['num_enc_layers'], num_heads=conf['num_heads'], dff=conf['dff'], pe_max_len=conf['pe_max_len'], rate=conf['rate'], alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones, priors=conf['priors'])
 
     # START
     hs_train_reg(expdir, model, conf, tr_iterator_by_seqs, dt_iterator, tr_dset, dt_dset, num_phones)

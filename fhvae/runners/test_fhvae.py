@@ -29,6 +29,12 @@ def test_reg(expdir, model, conf, tt_iterator_by_seqs, tt_seqs, tt_dset):
         with open(os.path.join(checkpoint_directory, 'best_checkpoint'), 'r') as pid:
             best_checkpoint = (pid.readline()).rstrip()
         status = checkpoint.restore(os.path.join(checkpoint_directory, 'ckpt-' + str(best_checkpoint)))
+
+        # delete other checkpoints to save space
+        cp_list = os.listdir(checkpoint_directory)
+        for cp in cp_list:
+            if (not cp.startswith('ckpt-'+str(best_checkpoint))) or (not cp.startswith('best')):
+                os.remove(os.path.join(checkpoint_directory, cp))
     else:
         manager = tf.train.CheckpointManager(checkpoint, directory=checkpoint_directory, max_to_keep=5)
         status = checkpoint.restore(manager.latest_checkpoint)
@@ -116,6 +122,11 @@ def compute_average_values(model, tt_seqs, conf, create_test_dataset):
     tot_segs = 0.
     avg_vals = [0. for _ in range(len(sum_names))]
 
+    stddevs_z1 = []
+    stddevs_z2 = []
+    vars_z1 = []
+    vars_z2 = []
+
     for yval, xval, nval, cval, bval, _ in Test_Dataset:
         nval = tf.cast(nval, dtype=tf.float32)
 
@@ -129,6 +140,17 @@ def compute_average_values(model, tt_seqs, conf, create_test_dataset):
             sum_vals[i] += -tf.reduce_mean(results[i])
         sum_loss += loss
         tot_segs += len(xval)
+
+        stddevs_z1.append(tf.reduce_mean(tf.exp(qz1_x[1]*0.5)))
+        stddevs_z2.append(tf.reduce_mean(tf.exp(qz2_x[1]*0.5)))
+        vars_z1.append(tf.reduce_mean(tf.exp(qz1_x[1])))
+        vars_z2.append(tf.reduce_mean(tf.exp(qz2_x[1])))
+
+
+    print('mean variance z1: ', tf.reduce_mean(vars_z1))
+    print('mean stddev z1: ', tf.reduce_mean(stddevs_z1))
+    print('mean variance z2: ', tf.reduce_mean(vars_z2))
+    print('mean stddev z2: ', tf.reduce_mean(stddevs_z2))
 
     avg_loss = sum_loss/tot_segs
     print("average loss = %f" % (avg_loss))

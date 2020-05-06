@@ -7,7 +7,7 @@ from ..transformer.transf_utils import *
 class RegFHVAEtransf(tf.keras.Model):
     ''' Regularised FHVAE with transformer blocks (multihead attention) as encoder and decoder '''
 
-    def __init__(self, z1_dim=32, z2_dim=32, nmu2=5000, z1_nlabs={}, z2_nlabs={}, x_rhus=[256, 256], d_model=512, num_enc_layers=4, num_heads=8, dff=2048, pe_max_len=8000, rate=0.1, mu_nl=None, logvar_nl=None, tr_shape=(20, 80), bs=256, alpha_dis_z1=1.0, alpha_dis_z2=1.0, alpha_reg_b=1.0, alpha_reg_c=1.0, n_phones=62, name="autoencoder", **kwargs):
+    def __init__(self, z1_dim=32, z2_dim=32, nmu2=5000, z1_nlabs={}, z2_nlabs={}, x_rhus=[256, 256], d_model=512, num_enc_layers=4, num_heads=8, dff=2048, pe_max_len=8000, rate=0.1, mu_nl=None, logvar_nl=None, tr_shape=(20, 80), bs=256, alpha_dis_z1=1.0, alpha_dis_z2=1.0, alpha_reg_b=1.0, alpha_reg_c=1.0, n_phones=62, priors=[0.5, 1.0, 0.5, 1.0], name="autoencoder", **kwargs):
 
         super(RegFHVAEtransf, self).__init__(name=name, **kwargs)
 
@@ -56,11 +56,7 @@ class RegFHVAEtransf(tf.keras.Model):
         self.regulariser = Regulariser(self.z1_nlabs, self.z2_nlabs)
 
         # log-prior stddevs
-        # self.pz1_stddev = 1.0
-        self.pz1_stddev = 0.5
-        self.pmu1_stddev = 1.0
-        self.pz2_stddev = 0.5
-        self.pmu2_stddev = 1.0
+        self.pz1_stddev, self.pmu1_stddev, self.pz2_stddev, self.pmu2_stddev = priors
 
 
     def call(self, x, y, b):

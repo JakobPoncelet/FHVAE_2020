@@ -271,10 +271,12 @@ def estimate_mu1_mu2_dict(model, dataset, mu1_table, mu2_table, nphones, nsegs, 
     for yval, xval, _, _, talab, _ in dataset:
         z1_mu, _, _, z2_mu, _, _, _, _ = model.encoder(tf.reshape(xval, [-1, tr_shape[0], tr_shape[1]]))
 
+        # phon_vecs: [num_phones x batch_size],  z1_mu: [batch_size x z1_dim]
         phon_vecs = tf.one_hot(talab[:, 0], depth=nphones.shape[0], axis=0, dtype=tf.float32)
         mu1_table += tf.matmul(phon_vecs, z1_mu)
         nphones += tf.reduce_sum(phon_vecs, axis=1)
 
+        # y_br: [#nmu2_seqs x batch_size]
         y_br = tf.one_hot(yval, depth=nsegs.shape[0], axis=0, dtype=tf.float32)
         mu2_table += tf.matmul(y_br, z2_mu)
         nsegs += tf.reduce_sum(y_br, axis=1)

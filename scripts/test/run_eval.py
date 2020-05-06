@@ -100,7 +100,7 @@ def main(expdir, test_config, save_vars):
                                    z2_nlabs=c_n, mu_nl=None, logvar_nl=None, tr_shape=conf['tr_shape'], bs=conf['batch_size'],
                                    alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'],
                                    alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'],
-                                   n_phones=num_phones)
+                                   n_phones=num_phones, priors=conf['priors'])
 
     if conf['model'] == 'LSTM_unidirectional':
         model = RegFHVAE_unidirectional(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], z1_rhus=conf['z1_rhus'],
@@ -108,7 +108,7 @@ def main(expdir, test_config, save_vars):
                                         z2_nlabs=c_n, mu_nl=None, logvar_nl=None, tr_shape=conf['tr_shape'],
                                         bs=conf['batch_size'], alpha_dis_z1=conf['alpha_dis_z1'],
                                         alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'],
-                                        alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones)
+                                        alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones, priors=conf['priors'])
 
     if conf['model'] == 'LSTM_bidirectional':
         model = RegFHVAE_bidirectional(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], z1_rhus=conf['z1_rhus'],
@@ -116,7 +116,7 @@ def main(expdir, test_config, save_vars):
                                        z2_nlabs=c_n, mu_nl=None, logvar_nl=None, tr_shape=conf['tr_shape'],
                                        bs=conf['batch_size'], alpha_dis_z1=conf['alpha_dis_z1'],
                                        alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'],
-                                       alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones)
+                                       alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones, priors=conf['priors'])
 
     if conf['model'] == 'transformer':
         model = RegFHVAEtransf(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], nmu2=conf['nmu2'], x_rhus=conf['x_rhus'],
@@ -124,7 +124,7 @@ def main(expdir, test_config, save_vars):
                                d_model=conf['d_model'], num_enc_layers=conf['num_enc_layers'],
                                num_heads=conf['num_heads'], dff=conf['dff'], pe_max_len=conf['pe_max_len'],
                                rate=conf['rate'], alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'],
-                               alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones)
+                               alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones, priors=conf['priors'])
 
     # generate and write out Z1/Z2 for train/test/dev files (can take a while)
     if save_vars:

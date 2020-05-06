@@ -5,7 +5,7 @@ import os
 # location of all experiments
 expdir = '/esat/spchdisk/scratch/jponcele/fhvae_jakob'
 # list of keywords of which one has to be present in experiments
-keywords = ['29apr','27april','24april','23april','21april','19april']
+keywords = ['5may','29apr','27april','24april','23april','22april','21april','19april']
 ######################################################################
 
 print('PRINTING RESULTS OF ACCURACY WINDOW=0')
