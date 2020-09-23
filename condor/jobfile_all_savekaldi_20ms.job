@@ -1,0 +1,27 @@
+Universe = vanilla
+
+#cgn: 8 / 30G / 300000 / 1
+#timit: 8 / 10G / 
+RequestCpus = 8
+RequestMemory = 20G
++RequestWallTime = 86400
+request_GPUs = 1
+
+#cgn: 5.0 / 5000
+Requirements = (CUDACapability >= 3.5)\
+  &&(Has_avx)\
+  &&(CUDAGlobalMemoryMb >= 6000)
+
+NiceUser = true
+initialdir = /users/spraak/jponcele/JakobFHVAE
+
+Executable = condor/run_all_kaldifeats_20ms.sh
+Arguments = "$(expdir)"
+
+Log          = $(expdir)/condor_extract_kaldifeats_20ms.log
+Output       = $(expdir)/condor_extract_kaldifeats_20ms.out
+Error        = $(expdir)/condor_extract_kaldifeats_20ms.err
+
+# usage: condor_submit jobfile.job expdir=/esat/spchdisk/scratch/jponcele/fhvae_jakob/exp config=/users/spraak/jponcele/JakobFHVAE/config.cfg
+
+Queue

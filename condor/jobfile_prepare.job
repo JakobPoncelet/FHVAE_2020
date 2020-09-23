@@ -1,0 +1,36 @@
+Universe = vanilla
+
+RequestCpus = 4
+RequestMemory = 4G
++RequestWallTime = 900
+request_GPUs = 1
+
+Requirements = (CUDACapability >= 3.5)\
+  &&(CUDAGlobalMemoryMb >= 3000)\
+  &&(Has_avx)\
+  &&(machine!="spchcl23.esat.kuleuven.be")\
+  &&(machine!="spchcl24.esat.kuleuven.be")\
+  &&(machine!="molder.esat.kuleuven.be")\
+  &&(machine!="blanche.esat.kuleuven.be")\
+  &&(machine!="yperman.esat.kuleuven.be")\
+  &&(machine!="bornholm.esat.kuleuven.be")\
+  &&(machine!="kiviuq.esat.kuleuven.be")\
+  &&(machine!="spchcl18.esat.kuleuven.be")\
+  &&(machine!="spchcl19.esat.kuleuven.be")\
+  &&(machine!="spchcl21.esat.kuleuven.be")\
+  &&(machine!="spchcl17.esat.kuleuven.be")\
+  &&(machine!="estragon.esat.kuleuven.be")
+
+NiceUser = false
+initialdir = /users/spraak/jponcele/JakobFHVAE
+
+Executable = /esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python
+Arguments = "preprocessing_examples/prepare_noisy_timit_numpy.py /users/spraak/spchdata/aurora/CDdata_aurora2/noises /esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/timit_np_fbank_4 /esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/timit_np_fbank_noisy /users/spraak/jponcele/NoiseFilter --ftype fbank"
+
+Log          = /users/spraak/jponcele/condor_prep/condor_prep.log
+Output       = /users/spraak/jponcele/condor_prep/condor_prep.out
+Error        = /users/spraak/jponcele/condor_prep/condor_prep.err
+
+# usage: condor_submit jobfile.job expdir=/esat/spchdisk/scratch/jponcele/fhvae_jakob/exp config=/users/spraak/jponcele/JakobFHVAE/config.cfg
+
+Queue

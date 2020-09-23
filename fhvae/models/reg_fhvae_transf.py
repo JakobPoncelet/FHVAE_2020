@@ -7,7 +7,7 @@ from ..transformer.transf_utils import *
 class RegFHVAEtransf(tf.keras.Model):
     ''' Regularised FHVAE with transformer blocks (multihead attention) as encoder and decoder '''
 
-    def __init__(self, z1_dim=32, z2_dim=32, nmu2=5000, z1_nlabs={}, z2_nlabs={}, x_rhus=[256, 256], d_model=512, num_enc_layers=4, num_heads=8, dff=2048, pe_max_len=8000, rate=0.1, mu_nl=None, logvar_nl=None, tr_shape=(20, 80), bs=256, alpha_dis_z1=1.0, alpha_dis_z2=1.0, alpha_reg_b=1.0, alpha_reg_c=1.0, n_phones=62, priors=[0.5, 1.0, 0.5, 1.0], name="autoencoder", **kwargs):
+    def __init__(self, z1_dim=32, z2_dim=32, nmu2=5000, z1_nlabs={}, z2_nlabs={}, x_rhus=[256, 256], d_model=512, num_enc_layers=4, num_heads=8, dff=2048, pe_max_len=8000, rate=0.1, mu_nl=None, logvar_nl=None, tr_shape=(20, 80), bs=256, alpha_dis_z1=1.0, alpha_dis_z2=1.0, alpha_reg_b=1.0, alpha_reg_c=1.0, n_phones=62, bump_logpmu1=1.0, alpha_advreg_b=1.0, alpha_advreg_c=1.0, priors=[0.5, 1.0, 0.5, 1.0], num_flow_steps=0, num_noisy_versions=0, alpha_noise=0.0, name="autoencoder", **kwargs):
 
         super(RegFHVAEtransf, self).__init__(name=name, **kwargs)
 
@@ -37,7 +37,9 @@ class RegFHVAEtransf(tf.keras.Model):
         # loss factors
         self.alpha_dis_z1, self.alpha_dis_z2 = alpha_dis_z1, alpha_dis_z2
         self.alpha_reg_b, self.alpha_reg_c = alpha_reg_b, alpha_reg_c
-
+        self.alpha_advreg_b, self.alpha_advreg_c = alpha_advreg_b, alpha_advreg_c
+        self.bump_logpmu1 = bump_logpmu1
+        self.alpha_noise = alpha_noise
 
         #transformer architecture
         self.d_model = d_model
@@ -50,14 +52,20 @@ class RegFHVAEtransf(tf.keras.Model):
         #decoder
         self.x_rhus = x_rhus
 
+        # householder flow
+        self.num_flow_steps = num_flow_steps
+
         #init net
-        self.encoder = Encoder(self.z1_dim, self.z2_dim, self.d_model, self.num_enc_layers, self.num_heads, self.dff, self.pe_max_len, self.rate, self.bs, self.tr_shape, self.mu_nl, self.logvar_nl)
+        self.encoder = Encoder(self.z1_dim, self.z2_dim, self.d_model, self.num_enc_layers, self.num_heads, self.dff, self.pe_max_len, self.rate, self.bs, self.tr_shape, self.mu_nl, self.logvar_nl, self.num_flow_steps)
         self.decoder = Decoder(self.x_rhus, self.tr_shape, self.mu_nl, self.logvar_nl)
         self.regulariser = Regulariser(self.z1_nlabs, self.z2_nlabs)
+        self.advregulariser = AdversarialRegulariser(self.z1_nlabs, self.z2_nlabs)
 
         # log-prior stddevs
         self.pz1_stddev, self.pmu1_stddev, self.pz2_stddev, self.pmu2_stddev = priors
 
+        # explicit noise removal training on z1 with noisy versions of clean files
+        self.num_noisy_versions = num_noisy_versions
 
     def call(self, x, y, b):
 
@@ -67,16 +75,17 @@ class RegFHVAEtransf(tf.keras.Model):
         # lookup mu2 from table
         mu2 = tf.gather(self.mu2_table, y)
 
-        z1_mu, z1_logvar, z1_sample, z2_mu, z2_logvar, z2_sample, qz1_x, qz2_x = self.encoder(x)
+        z1_mu, z1_logvar, z1_sample, z1_sample_0, z2_mu, z2_logvar, z2_sample, z2_sample_0, qz1_x, qz2_x = self.encoder(x)
 
         out, x_mu, x_logvar, x_sample, px_z = self.decoder(x, z1_sample, z2_sample)
 
         z1_rlogits, z2_rlogits = self.regulariser(z1_mu, z2_mu)
 
-        return mu2, mu1, qz2_x, z2_sample, qz1_x, z1_sample, px_z, x_sample, z1_rlogits, z2_rlogits
+        z1_advrlogits, z2_advrlogits = self.advregulariser(z1_mu, z2_mu)
 
+        return mu2, mu1, qz2_x, z2_sample, z2_sample_0, qz1_x, z1_sample, z1_sample_0, px_z, x_sample, z1_rlogits, z2_rlogits, z1_advrlogits, z2_advrlogits
 
-    def compute_loss(self, x, y, n, bReg, cReg, mu2, mu1, qz2_x, z2_sample, qz1_x, z1_sample, px_z, x_sample, z1_rlogits, z2_rlogits, num_seqs):
+    def compute_loss(self, x, y, n, bReg, cReg, mu2, mu1, qz2_x, z2_sample, qz1_x, z1_sample, px_z, x_sample, z1_rlogits, z2_rlogits, z1_advrlogits, z2_advrlogits, num_seqs):
 
         fn = tf.nn.sparse_softmax_cross_entropy_with_logits
 
@@ -89,6 +98,7 @@ class RegFHVAEtransf(tf.keras.Model):
         # variational lower bound
         log_pmu1 = log_normal_pdf(mu1, pmu1[0], pmu1[1], raxis=1)
         log_pmu1 = log_pmu1 / (n * num_seqs)
+        log_pmu1 = self.bump_logpmu1 * log_pmu1
         log_pmu2 = log_normal_pdf(mu2, pmu2[0], pmu2[1], raxis=1)
         log_pmu2 = log_pmu2 / n
         log_px_z = log_normal_pdf(x, px_z[0], px_z[1], raxis=(1, 2))
@@ -125,18 +135,36 @@ class RegFHVAEtransf(tf.keras.Model):
         log_b_loss = tf.reduce_sum(input_tensor=log_b, axis=1)
         log_c_loss = tf.reduce_sum(input_tensor=log_c, axis=1)
 
-        # total loss
-        loss = -1 * tf.reduce_mean(
-            input_tensor=lb + self.alpha_dis_z2 * log_qy_mu2 + self.alpha_dis_z1 * log_qy_mu1 + self.alpha_reg_b * log_b_loss + self.alpha_reg_c * log_c_loss)
+        # adversarial Regularisation
+        TensorList = [
+            tf.expand_dims(-fn(labels=tf.squeeze(tf.slice(cReg, [0, i], [-1, 1]), axis=-1), logits=z1_advrlogits[i]),
+                           axis=1) for i, name in enumerate(self.z2_nlabs.keys())]
+        advlog_b = tf.concat(TensorList, axis=1)
 
-        return loss, log_pmu2, log_pmu1, neg_kld_z2, neg_kld_z1, log_px_z, lb, log_qy_mu2, log_qy_mu1, log_b_loss, log_c_loss
+        TensorList = [
+            tf.expand_dims(-fn(labels=tf.squeeze(tf.slice(bReg, [0, i], [-1, 1]), axis=-1), logits=z2_advrlogits[i]),
+                           axis=1) for i, name in enumerate(self.z1_nlabs.keys())]
+        advlog_c = tf.concat(TensorList, axis=1)
+
+        advlog_b_loss = tf.reduce_sum(input_tensor=advlog_b, axis=1)
+        advlog_c_loss = tf.reduce_sum(input_tensor=advlog_c, axis=1)
+
+        # noise - clean loss
+        clean_segs = tf.expand_dims(tf.strided_slice(qz1_x[0], [0, 0], tf.shape(qz1_x[0]), [self.num_noisy_versions+1, 1]), axis=1)
+        noise_loss = -1 * tf.keras.losses.mean_squared_error(y_true=tf.reshape(tf.tile(clean_segs, [1, self.num_noisy_versions+1, 1]), tf.shape(qz1_x[0])),
+                                                             y_pred=qz1_x[0])
+
+        # total loss
+        loss = -1 * tf.reduce_mean(input_tensor=lb + self.alpha_dis_z2 * log_qy_mu2 + self.alpha_dis_z1 * log_qy_mu1 + self.alpha_reg_b * log_b_loss + self.alpha_reg_c * log_c_loss + self.alpha_advreg_b * advlog_b_loss + self.alpha_advreg_c * advlog_c_loss)  # + self.alpha_noise * noise_loss)
+
+        return loss, log_pmu2, log_pmu1, neg_kld_z2, neg_kld_z1, log_px_z, lb, log_qy_mu2, log_qy_mu1, log_b_loss, log_c_loss, advlog_b_loss, advlog_c_loss, noise_loss
 
 
 class Encoder(tf.keras.Model):  # instead of layers.Layer
     ''' encodes the input to the latent factors z1 and z2 '''
 
     def __init__(self, z1_dim=32, z2_dim=32, d_model=512, num_enc_layers=4, num_heads=8, dff=2048, pe_max_len=8000,
-                 rate=0.1, bs=256, tr_shape=(20,80), mu_nl=None, logvar_nl=None, name="encoder", **kwargs):
+                 rate=0.1, bs=256, tr_shape=(20,80), mu_nl=None, logvar_nl=None, num_flow_steps=0, name="encoder", **kwargs):
 
         super(Encoder, self).__init__(name=name,   **kwargs)
 
@@ -157,7 +185,7 @@ class Encoder(tf.keras.Model):  # instead of layers.Layer
         self.rate = rate
 
         # arch for z2_pre_encoder
-        self.tf_enc_z2 = TransformerEncoder(num_enc_layers, d_model, num_heads, dff, pe_max_len, 'z1_encoder', rate, bs)
+        self.tf_enc_z2 = TransformerEncoder(num_enc_layers, d_model, num_heads, dff, pe_max_len, 'z2_encoder', rate, bs)
 
         # arch for z1_pre_encoder
         self.tf_enc_z1 = TransformerEncoder(num_enc_layers, d_model, num_heads, dff, pe_max_len, 'z1_encoder', rate, bs)
@@ -179,24 +207,40 @@ class Encoder(tf.keras.Model):  # instead of layers.Layer
             z2_dim, activation=logvar_nl, use_bias=True,
             kernel_initializer='glorot_uniform', bias_initializer='zeros')
 
+        # householder flow
+        self.num_flow_steps = num_flow_steps
+
+        self.flowlayers = {'z1': {}, 'z2': {}}
+        for i in range(0, self.num_flow_steps):
+            self.flowlayers['z1'][str(i)] = layers.Dense(z1_dim, activation=mu_nl, use_bias=True,
+                                                         kernel_initializer='glorot_uniform',
+                                                         bias_initializer='zeros')
+
+            self.flowlayers['z2'][str(i)] = layers.Dense(z2_dim, activation=mu_nl, use_bias=True,
+                                                         kernel_initializer='glorot_uniform',
+                                                         bias_initializer='zeros')
 
     def call(self, inputs):
         z2_pre_out = self.z2_pre_encoder(inputs)
 
         z2_mu = self.z2mu_fclayer(z2_pre_out)
         z2_logvar = self.z2logvar_fclayer(z2_pre_out)
-        z2_sample = reparameterize(z2_mu, z2_logvar)
+        z2_sample_0 = reparameterize(z2_mu, z2_logvar)
 
-        z1_pre_out = self.z1_pre_encoder(inputs, z2_sample)
+        z2_sample = self.householder_flow(z2_sample_0, z2_pre_out, 'z2')
+
+        z1_pre_out = self.z1_pre_encoder(inputs, z2_mu)
 
         z1_mu = self.z1mu_fclayer(z1_pre_out)
         z1_logvar = self.z1logvar_fclayer(z1_pre_out)
-        z1_sample = reparameterize(z1_mu, z1_logvar)
+        z1_sample_0 = reparameterize(z1_mu, z1_logvar)
+
+        z1_sample = self.householder_flow(z1_sample_0, z1_pre_out, 'z1')
 
         qz1_x = [z1_mu, z1_logvar]
         qz2_x = [z2_mu, z2_logvar]
 
-        return z1_mu, z1_logvar, z1_sample, z2_mu, z2_logvar, z2_sample, qz1_x, qz2_x
+        return z1_mu, z1_logvar, z1_sample, z1_sample_0, z2_mu, z2_logvar, z2_sample, z2_sample_0, qz1_x, qz2_x
 
     def z2_pre_encoder(self, x):
         """
@@ -233,6 +277,30 @@ class Encoder(tf.keras.Model):  # instead of layers.Layer
 
         return outputs
 
+    def householder_flow(self, z, v, latent_var):
+        """
+        Apply num_flow_steps steps of householder flow to a given (z_0 and v_1).
+            z_t = z_(t-1) - 2 * (v_t*v_t^T)*z_(t-1) / ||v_t||^2
+        In: z_0 (=z_sample), v_1 (=h, last state of enc),
+            latent_var='z1' or 'z2'
+        Out: z_T, i.e. an updated z_sample
+        """
+        z = tf.identity(z)
+
+        for i in range(0, self.num_flow_steps):
+            flayer = self.flowlayers[latent_var][str(i)]
+            v = flayer(v)
+            # v = self.householder_vectors[latent_var][str(i)]
+
+            # z_t = z_(t-1) - 2 * (v_t*v_t^T)*z_(t-1) / ||v_t||^2
+            A = tf.matmul(tf.expand_dims(v, axis=-1), tf.expand_dims(v, axis=-1), transpose_b=True)
+            Az = tf.matmul(A, tf.expand_dims(z, axis=-1))
+            vnorm_sq = tf.matmul(tf.expand_dims(v, axis=-1), tf.expand_dims(v, axis=-1), transpose_a=True)
+            z_fac = tf.divide(tf.reduce_sum(Az, axis=-1), tf.reduce_sum(vnorm_sq, axis=-1))
+
+            z = z - 2*z_fac
+
+        return z
 
 class Decoder(layers.Layer):
     ''' decodes factors z1 and z2 to reconstructed input x'''
@@ -343,6 +411,60 @@ class Regulariser(layers.Layer):
 
         return rlogits
 
+
+class AdversarialRegulariser(layers.Layer):
+    ''' predicts the regularizing factors '''
+
+    def __init__(self, z1_nlabs={}, z2_nlabs={}, name="advregulariser", **kwargs):
+
+        super(AdversarialRegulariser, self).__init__(name=name, **kwargs)
+
+        #dict with e.g. [('gender',3), ('region',9)]
+        self.z1_nlabs = z1_nlabs
+        self.z2_nlabs = z2_nlabs
+
+        # subtract -1 for the unknown labels (unsupervised),
+        # these will get zero logits (see fix_logits below) and do not need to be mapped to by the FC layer
+        self.z1_nlabs_per_fac = [nlab - 1 for nlab in list(self.z1_nlabs.values())]
+        self.z2_nlabs_per_fac = [nlab - 1 for nlab in list(self.z2_nlabs.values())]
+
+        # fully connected layers for every label
+        self.advreg_z1_fclayer = layers.Dense(
+            sum(self.z2_nlabs_per_fac), activation=None, use_bias=True,
+            kernel_initializer='glorot_uniform', bias_initializer='zeros')
+
+        self.advreg_z2_fclayer = layers.Dense(
+            sum(self.z1_nlabs_per_fac), activation=None, use_bias=True,
+            kernel_initializer='glorot_uniform', bias_initializer='zeros')
+
+        self.GRL = GradientReversalLayer()
+
+    def call(self, z1_mu, z2_mu):
+
+        z1_mu_rev = self.GRL(z1_mu)
+        z2_mu_rev = self.GRL(z2_mu)
+        z1_all_advrlogits = self.advreg_z1_fclayer(z1_mu_rev)
+        z2_all_advrlogits = self.advreg_z2_fclayer(z2_mu_rev)
+
+        z1_advrlogits = self.fix_logits(z1_all_advrlogits, self.z2_nlabs_per_fac)
+        z2_advrlogits = self.fix_logits(z2_all_advrlogits, self.z1_nlabs_per_fac)
+
+        return z1_advrlogits, z2_advrlogits
+
+    def fix_logits(self, all_rlogits, nlabs_per_fac):
+        # split the logits for z1/z2 into the different factors
+        # e.g. rlogits = list(Tens(logits_gender), Tens(logits_region))
+        rlogits = []
+
+        for tens in tf.split(all_rlogits, nlabs_per_fac, 1):
+            T = tf.shape(input=tens)[0]
+            z = tf.zeros([T, 1], dtype=tf.float32)
+            # add column of zeros at start for data with unknown labels ('' label always added at start)
+            rlogits.append(tf.concat((z, tens), axis=1))
+            # rlogits.append(tens)
+
+        return rlogits
+
 #@tf.function
 def log_normal_pdf(x, mu=0., logvar=0., raxis=1):
   log2pi = tf.math.log(2. * np.pi)
@@ -363,3 +485,18 @@ def kld(p_mu, p_logvar, q_mu, q_logvar):
     # Added extra brackets after the minus sign
     return -0.5 * (1 + p_logvar - q_logvar - (((p_mu - q_mu) ** 2 + tf.exp(p_logvar)) / tf.exp(q_logvar)))
 
+
+@tf.custom_gradient
+def GradientReversalOperator(x):
+    y = tf.identity(x)
+    def grad(dy):
+        return -1 * dy
+    return y, grad
+
+
+class GradientReversalLayer(tf.keras.layers.Layer):
+    def __init__(self):
+        super(GradientReversalLayer, self).__init__()
+
+    def call(self, inputs):
+        return GradientReversalOperator(inputs)

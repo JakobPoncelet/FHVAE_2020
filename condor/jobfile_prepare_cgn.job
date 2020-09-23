@@ -1,0 +1,26 @@
+Universe = vanilla
+
+RequestCpus = 8
+RequestMemory = 4G
++RequestWallTime = 86400
+request_GPUs = 0
+
+#Requirements = (CUDACapability >= 3.5)\
+#  &&(CUDAGlobalMemoryMb >= 3000)\
+#  &&(Has_avx)\
+Requirements = Has_avx
+
+NiceUser = True
+initialdir = /users/spraak/jponcele/JakobFHVAE
+
+Executable = /esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python
+#Arguments = "preprocessing_examples/prepare_noisy_cgn_numpy.py /users/spraak/spchdata/aurora/CDdata_aurora2/noises /esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/cgn_np_fbank_afgklno_unsup /esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/cgn_np_fbank_afgklno_noisy /users/spraak/jponcele/NoiseFilter --ftype fbank"
+Arguments = "preprocessing_examples/prepare_cgn_numpy.py /esat/spchtemp/scratch/jponcele/cgn_nl_sequences --ftype fbank --out_dir /esat/spchtemp/scratch/jponcele/cgn_nl_sequences"
+
+Log          = /users/spraak/jponcele/condor_prep/condor_prep.log
+Output       = /users/spraak/jponcele/condor_prep/condor_prep.out
+Error        = /users/spraak/jponcele/condor_prep/condor_prep.err
+
+# usage: condor_submit jobfile.job expdir=/esat/spchdisk/scratch/jponcele/fhvae_jakob/exp config=/users/spraak/jponcele/JakobFHVAE/config.cfg
+
+Queue

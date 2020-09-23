@@ -10,7 +10,7 @@ echo 'classconfig=' $3
 
 echo "Training..."
 # train
-/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python scripts/train/run_hs_train.py --expdir $1 --config $2
+/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python scripts/train/run_hs_train2.py --expdir $1 --config $2
 
 echo "Testing..."
 # test
@@ -18,6 +18,10 @@ echo "Testing..."
 
 echo "Building classifier..."
 # classify
-/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python scripts/classifier/run_classifier.py --expdir $1 --config $3
+/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python scripts/classifier/run_classifier.py --expdir $1 --config $3 --var z1
+
+# /esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python scripts/classifier/run_classifier.py --expdir $1 --config $3 --var z2
+
+# /esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python scripts/classifier/run_classifier.py --expdir $1 --config $3 --var z1_z2
 
 

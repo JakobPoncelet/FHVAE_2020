@@ -18,18 +18,16 @@ if gpus:
     except RuntimeError as e:
         print(e)
         pass
-import numpy as np
 import pickle
 import ast
 import shutil
 from collections import OrderedDict
 from configparser import ConfigParser
 from scripts.train.hs_train_loaders import load_data_reg
+from fhvae.models.init_model import init_model
 from fhvae.runners.hs_train_fhvae import hs_train_reg
-from fhvae.models.reg_fhvae_lstm_unidir import RegFHVAE_unidirectional
-from fhvae.models.reg_fhvae_lstm_bidir import RegFHVAE_bidirectional
-from fhvae.models.reg_fhvae_lstm_atten import RegFHVAE_attention
-from fhvae.models.reg_fhvae_transf import RegFHVAEtransf
+from fhvae.runners.finetuning_fhvae import finetune
+
 # tf.autograph.set_verbosity(10)
 
 # For debugging on different GPU: os.environ["CUDA_VISIBLE_DEVICES"]="0,1"
@@ -63,19 +61,27 @@ def main(expdir, configfile):
     conf = load_config(os.path.join(expdir, 'config.cfg'))
     conf['expdir'] = expdir
 
+    if str(conf.get('mvn', True)).lower() in ['no', 'false']:
+        conf['mvn'] = False
+    else:
+        conf['mvn'] = True
+
     # symbolic link dataset to ./datasets
     if not os.path.exists("./datasets"):
         os.mkdir("./datasets")
-    if os.path.islink(os.path.join("./datasets", conf['dataset'])):
-        os.unlink(os.path.join("./datasets", conf['dataset']))
-    if os.path.isdir(os.path.join("./datasets", conf['dataset'])):
-        print("Physical directory already exists in ./datasets, cannot create symlink of same name to the dataset.")
-        exit(1)
-    os.symlink(os.path.join(conf['datadir'], conf['dataset']), os.path.join("./datasets", conf['dataset']))
+    # if os.path.islink(os.path.join("./datasets", conf['dataset'])):
+    #     os.unlink(os.path.join("./datasets", conf['dataset']))
+    # if os.path.isdir(os.path.join("./datasets", conf['dataset'])):
+    #     print("Physical directory already exists in ./datasets, cannot create symlink of same name to the dataset.")
+    #     exit(1)
+    try:
+        os.symlink(os.path.join(conf['datadir'], conf['dataset']), os.path.join("./datasets", conf['dataset']))
+    except Exception:
+        print("Could not create a symbolic link to the dataset dir")
 
     # set up the iterators over the dataset (for large datasets this may take a while)
     tr_nseqs, tr_shape, tr_iterator_by_seqs, dt_iterator, dt_dset, tr_dset = \
-        load_data_reg(conf['dataset'], conf['fac_root'], conf['facs'], conf['talabs'])
+        load_data_reg(conf['dataset'], conf['fac_root'], conf['facs'], conf['talabs'], conf.get('num_noisy_versions'), seg_len=conf.get('seg_len',20), mvn=conf['mvn'])
 
     # identify regularizing factors
     used_labs = conf['facs'].split(':')
@@ -99,27 +105,25 @@ def main(expdir, configfile):
     print('#nmu2: ', conf['nmu2'])
 
     num_phones = len(tr_dset.talab_vals['phones'])
+    conf['num_phones'] = num_phones
     print('number of phones: ', num_phones)
+
+    if 'num_noisy_versions' not in conf:
+        conf['num_noisy_versions'] = 0
 
     # dump settings
     with open(os.path.join(expdir, 'trainconf.pkl'), "wb") as fid:
         pickle.dump(conf, fid)
 
-    # initialize the model
-    if conf['model'] == 'LSTM_attention':
-        model = RegFHVAE_attention(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], z1_rhus=conf['z1_rhus'], z2_rhus=conf['z2_rhus'], x_rhus=conf['x_rhus'], nmu2=conf['nmu2'], z1_nlabs=b_n, z2_nlabs=c_n, mu_nl=None, logvar_nl=None, tr_shape=tr_shape, bs=conf['batch_size'], alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones, priors=conf['priors'])
-
-    if conf['model'] == 'LSTM_unidirectional':
-        model = RegFHVAE_unidirectional(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], z1_rhus=conf['z1_rhus'], z2_rhus=conf['z2_rhus'], x_rhus=conf['x_rhus'], nmu2=conf['nmu2'], z1_nlabs=b_n, z2_nlabs=c_n, mu_nl=None, logvar_nl=None, tr_shape=tr_shape, bs=conf['batch_size'], alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones, priors=conf['priors'])
-
-    if conf['model'] == 'LSTM_bidirectional':
-        model = RegFHVAE_bidirectional(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], z1_rhus=conf['z1_rhus'], z2_rhus=conf['z2_rhus'], x_rhus=conf['x_rhus'], nmu2=conf['nmu2'], z1_nlabs=b_n, z2_nlabs=c_n, mu_nl=None, logvar_nl=None, tr_shape=tr_shape, bs=conf['batch_size'], alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones, bump_logpmu1=conf['bump_logpmu1'], priors=conf['priors'])
-
-    if conf['model'] == 'transformer':
-        model = RegFHVAEtransf(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], nmu2=conf['nmu2'], x_rhus=conf['x_rhus'], tr_shape=tr_shape, z1_nlabs=b_n, z2_nlabs=c_n, mu_nl=None, logvar_nl=None, d_model=conf['d_model'], num_enc_layers=conf['num_enc_layers'], num_heads=conf['num_heads'], dff=conf['dff'], pe_max_len=conf['pe_max_len'], rate=conf['rate'], alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones, priors=conf['priors'])
-
     # START
-    hs_train_reg(expdir, model, conf, tr_iterator_by_seqs, dt_iterator, tr_dset, dt_dset, num_phones)
+    model, optimizer = init_model(conf, finetuning=False)
+    hs_train_reg(expdir, model, optimizer, conf, tr_iterator_by_seqs, dt_iterator, tr_dset, dt_dset, num_phones, noise_training=False)
+
+    if conf.get('finetuning', False) in ['true', 'True', 'yes', 'Yes']:
+        print('################### STARTING FINETUNING #######################')
+        model, optimizer = init_model(conf, finetuning=True)
+        finetune(expdir, model, optimizer, conf, tr_iterator_by_seqs, dt_iterator, tr_dset, dt_dset, num_phones, noise_training=True)
+
 
 def load_config(conf):
     ''' Load configfile and extract arguments as a dict '''

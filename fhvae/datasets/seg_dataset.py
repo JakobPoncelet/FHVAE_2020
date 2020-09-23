@@ -47,6 +47,9 @@ class SegmentDataset(object):
         self.seq2idx = self.seq_d.seq2idx
         self.seq2regidx = self.seq_d.seq2regidx
 
+        self.clean_seqlist = self.seq_d.clean_seqlist
+        self.noisy_seqlist = self.seq_d.noisy_seqlist
+
     def seq_iterator(self, bs, seqs=None, mapper=None):
         return self.seq_d.iterator(
             bs, seqs, mapper)
@@ -75,6 +78,14 @@ class SegmentDataset(object):
         seq_iterator = self.seq_iterator(seq_bs, seqs, seq_mapper)
 
         for seq, feats, lens in seq_iterator:
+            if 'dB' in seq:  # load lab/talab of clean seq
+                if seq.startswith('nbest'):
+                    seq = '_'.join(seq.split('_')[0:-3]+['clean'])
+                elif seq.startswith('v') or seq.startswith('n'):  # cgn
+                    seq = '_'.join(seq.split('_')[0:-2])
+                else:  # timit
+                    seq = '_'.join(seq.split('_')[0:-3])
+
             seq_talabs = [self.talabseqs_d_new[name][seq] for name in self.talab_names]
             yield self.seq2idx[seq], feats, lens, self.seq2regidx[seq], seq_talabs
 
@@ -93,8 +104,8 @@ class SegmentDataset(object):
 
 class NumpySegmentDataset(SegmentDataset):
     def __init__(self, feat_scp, len_scp, lab_specs=[], talab_specs=[], min_len=1,
-                 preload=False, mvn_path=None, seg_len=20, seg_shift=8, rand_seg=False, copy_from=None, train_talabs=None):
+                 preload=False, mvn_path=None, seg_len=20, seg_shift=8, rand_seg=False, copy_from=None, train_talabs=None, num_noisy_versions=None):
         seq_d = NumpyDataset(feat_scp, len_scp, lab_specs, talab_specs,
-                             min_len, preload, mvn_path, copy_from, train_talabs)
+                             min_len, preload, mvn_path, copy_from, train_talabs, num_noisy_versions)
         super(NumpySegmentDataset, self).__init__(
             seq_d, seg_len, seg_shift, rand_seg)

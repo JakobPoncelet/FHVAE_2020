@@ -1,0 +1,28 @@
+Universe = vanilla
+
+#cgn: 8 / 30G / 300000 / 1
+#timit: 8 / 10G / 
+RequestCpus = 4
+RequestMemory = 20G
++RequestWallTime = 80000
+request_GPUs = 1
+
+#cgn: 5.0 / 5000
+Requirements = (CUDACapability >= 3.5)\
+  &&(Has_avx)\
+  &&(CUDAGlobalMemoryMb >= 3000)\
+  &&(machine!="molder.esat.kuleuven.be")
+
+NiceUser = true
+initialdir = /users/spraak/jponcele/JakobFHVAE
+
+Executable = condor/run_all_kaldifeats_nlvl.sh
+Arguments = "$(expdir)"
+
+Log          = $(expdir)/condor_extract_kaldifeats.log
+Output       = $(expdir)/condor_extract_kaldifeats.out
+Error        = $(expdir)/condor_extract_kaldifeats.err
+
+# usage: condor_submit jobfile.job expdir=/esat/spchdisk/scratch/jponcele/fhvae_jakob/exp config=/users/spraak/jponcele/JakobFHVAE/config.cfg
+
+Queue

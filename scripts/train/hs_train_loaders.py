@@ -3,12 +3,14 @@ import numpy as np
 from fhvae.datasets.seg_dataset import NumpySegmentDataset
 import tensorflow as tf
 
-def load_data_reg(name, seqlist_path=None, lab_names=None, talab_names=None):
+def load_data_reg(name, seqlist_path=None, lab_names=None, talab_names=None, num_noisy_versions=None, seg_len=20, seg_shift=8, rand_seg=True, mvn=True):
     # lab_names e.g. region:gender then loaded from (seqlist_path % lab_name) as scp file
     root = "./datasets/%s" % name
-    mvn_path = "%s/train/mvn.pkl" % root
-    seg_len = 20  # 15
-    seg_shift = 8  # 5
+
+    if mvn:
+        mvn_path = "%s/train/mvn.pkl" % root
+    else:
+        mvn_path = None
 
     Dataset = NumpySegmentDataset
 
@@ -26,14 +28,15 @@ def load_data_reg(name, seqlist_path=None, lab_names=None, talab_names=None):
         "%s/train/feats.scp" % root, "%s/train/len.scp" % root,
         lab_specs=lab_specs, talab_specs=talab_specs,
         min_len=seg_len, preload=False, mvn_path=mvn_path,
-        seg_len=seg_len, seg_shift=seg_shift, rand_seg=True)
+        seg_len=seg_len, seg_shift=seg_shift, rand_seg=rand_seg,
+        num_noisy_versions=num_noisy_versions)
 
     dt_dset = Dataset(
         "%s/dev/feats.scp" % root, "%s/dev/len.scp" % root,
         lab_specs=lab_specs, talab_specs=talab_specs,
         min_len=seg_len, preload=False, mvn_path=mvn_path,
         seg_len=seg_len, seg_shift=seg_len, rand_seg=False,
-        copy_from=tr_dset)
+        copy_from=tr_dset, num_noisy_versions=num_noisy_versions)
 
     return _load_reg(tr_dset, dt_dset) + (tr_dset,)
 
@@ -48,13 +51,12 @@ def _load_reg(tr_dset, dt_dset):
             yield np.asarray(key), np.asarray(feats), np.asarray(lens), np.asarray(lab), np.asarray(talabs)
 
 
-    def dt_iterator(bs=256):
+    def dt_iterator(s_seqs=dt_dset.seqlist, bs=256):
         # development set iterator for validation step
-        _iterator = dt_dset.iterator(bs, seqs=dt_dset.seqlist)
+        _iterator = dt_dset.iterator(bs, seqs=s_seqs)
 
         for key, feats, lens, lab, talabs in _iterator:
             yield np.asarray(key), np.asarray(feats), np.asarray(lens), np.asarray(lab), np.asarray(talabs)
-
 
     tr_nseqs = len(tr_dset.seqlist)
     tr_shape = tr_dset.get_shape()

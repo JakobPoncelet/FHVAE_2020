@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi.py" line="62" mnemonic="7" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ed577b1c-d84e-4f0f-b92d-3d8eda990d38" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/configs/timit/config_lstm_complete_10steps.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_summary.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/JakobFHVAE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JakobFHVAE.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/condor/jobfile_all.job" beforeDir="false" afterPath="$PROJECT_DIR$/condor/jobfile_all.job" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/condor/jobfile_classifier.job" beforeDir="false" afterPath="$PROJECT_DIR$/condor/jobfile_classifier.job" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/condor/jobfile_test.job" beforeDir="false" afterPath="$PROJECT_DIR$/condor/jobfile_test.job" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/condor/jobfile_train.job" beforeDir="false" afterPath="$PROJECT_DIR$/condor/jobfile_train.job" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/condor/run_all.sh" beforeDir="false" afterPath="$PROJECT_DIR$/condor/run_all.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/cgn/config_afgklno_lstm_bidirectional.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/cgn/config_afgklno_lstm_bidirectional.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/cgn/config_ko_lstm_bidirectional.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/cgn/config_ko_lstm_bidirectional.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/classifier/config_classifier_timit_39phones.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/classifier/config_classifier_timit_39phones.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/classifier/config_classifier_timit_39phones_without_q.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/classifier/config_classifier_timit_39phones_without_q.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/classifier/config_classifier_timit_61phones.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/classifier/config_classifier_timit_61phones.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/defaults/config.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/defaults/config.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/defaults/config_classifier.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/defaults/config_classifier.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/timit/config_attention_39phones.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_attention_39phones.cfg" afterDir="false" />
@@ -14,21 +33,69 @@
       <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_4.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_4.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_5.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_5.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_breg.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_breg.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_largeprior.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_largeprior.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_largeprior2.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_largeprior2.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_small.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_small.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_smallprior.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_smallprior.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_smallprior2.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_smallprior2.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_phones.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_phones.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_phones_breg.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_phones_breg.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_q.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_q.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/timit/config_lstm_bidirectional_61phones.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_lstm_bidirectional_61phones.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/timit/config_lstm_complete.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_lstm_complete.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/timit/config_transf_39phones.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_transf_39phones.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/timit/config_unidirectional_39phones.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_unidirectional_39phones.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_atten.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_atten.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_unidir.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_unidir.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/timit/config_unidirectional_39phones_small.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_unidirectional_39phones_small.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/cgn_np_fbank" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/datasets/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/datasets/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/datasets/audio_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/datasets/audio_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/datasets/seg_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/datasets/seg_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/datasets/seq2seg.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/datasets/seq2seg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/datasets/seq_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/datasets/seq_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_OLD.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_atten.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_atten_OLD.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir_OLD.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_unidir.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_unidir_OLD.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_transf.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_transf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/runners/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/runners/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fhvae/runners/hs_train_fhvae.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/runners/hs_train_fhvae.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/runners/plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/runners/plotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/runners/save_latent_vars.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/runners/save_latent_vars.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fhvae/runners/test_fhvae.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/runners/test_fhvae.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/transformer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/transformer/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/transformer/transf_fhvae.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/transformer/transf_fhvae.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/transformer/transf_fhvae_dec.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/transformer/transf_fhvae_dec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/transformer/transf_layers.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/transformer/transf_layers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/transformer/transf_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/transformer/transf_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/cgn/cgn_per_spk_afgklno_dev.list" beforeDir="false" afterPath="$PROJECT_DIR$/misc/cgn/cgn_per_spk_afgklno_dev.list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/cgn/cgn_per_spk_afgklno_test.list" beforeDir="false" afterPath="$PROJECT_DIR$/misc/cgn/cgn_per_spk_afgklno_test.list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/cgn/makewavs_CGN.m" beforeDir="false" afterPath="$PROJECT_DIR$/misc/cgn/makewavs_CGN.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/cgn/speakers_regions.csv" beforeDir="false" afterPath="$PROJECT_DIR$/misc/cgn/speakers_regions.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/fbank.conf" beforeDir="false" afterPath="$PROJECT_DIR$/misc/fbank.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/timit/phone_map_60_48_39.txt" beforeDir="false" afterPath="$PROJECT_DIR$/misc/timit/phone_map_60_48_39.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/timit/timit_dev_spk.list" beforeDir="false" afterPath="$PROJECT_DIR$/misc/timit/timit_dev_spk.list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/timit/timit_eval.txt" beforeDir="false" afterPath="$PROJECT_DIR$/misc/timit/timit_eval.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/timit/timit_phoneclasses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/misc/timit/timit_phoneclasses.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/timit/timit_test_spk.list" beforeDir="false" afterPath="$PROJECT_DIR$/misc/timit/timit_test_spk.list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot_losses.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot_losses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing_examples/prepare_aurora_numpy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing_examples/prepare_cgn_numpy.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing_examples/prepare_cgn_numpy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing_examples/prepare_timit_numpy.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing_examples/prepare_timit_numpy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/print_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/print_results.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/classifier/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classifier/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/classifier/classifier_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classifier/classifier_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/classifier/load_classifier_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classifier/load_classifier_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/classifier/run_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classifier/run_classifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/classifier/test_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classifier/test_classifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/preprocess/prepare_numpy_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/preprocess/prepare_numpy_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/test/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/test/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/test/eval_loaders.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/test/eval_loaders.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/test/run_eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/test/run_eval.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/train/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/train/hs_train_loaders.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train/hs_train_loaders.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/train/run_hs_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train/run_hs_train.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,13 +104,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="JakobFHVAE" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fhvae/runners/test_fhvae.py">
+        <entry file="file://$PROJECT_DIR$/fhvae/runners/hs_train_fhvae.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="348">
+              <caret line="38" column="39" lean-forward="true" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -62,9 +132,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>train_step</find>
-      <find>step_cnt</find>
-      <find>model</find>
+      <find>set</find>
+      <find>args</find>
+      <find>lang</find>
+      <find>write_train</find>
+      <find>create_train_dataset</find>
+      <find>noise_training=True</find>
+      <find>noise_training=False</find>
+      <find>tf.print</find>
+      <find>seg_cnt</find>
+      <find>skip_aug_segs</find>
+      <find>nmu</find>
+      <find>nmu2</find>
+      <find>z1_sample</find>
+      <find>z1_mu</find>
+      <find>z1</find>
+      <find>fs</find>
+      <find>suff</find>
+      <find>resample</find>
+      <find>speed</find>
+      <find>seg</find>
+      <find>seg_len</find>
+      <find>dt_spks</find>
+      <find>mvn</find>
+      <find>cmvn</find>
+      <find>mvn_path</find>
+      <find>nbest</find>
+      <find>load_data</find>
+      <find>load_</find>
+      <find>load_data_reg</find>
+      <find>best</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -73,56 +170,65 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/plot_losses.py" />
-        <option value="$PROJECT_DIR$/scripts/classifier/load_classifier_data.py" />
-        <option value="$PROJECT_DIR$/scripts/classifier/run_classifier.py" />
-        <option value="$PROJECT_DIR$/misc/timit/phone_map_60_48_39.txt" />
-        <option value="$PROJECT_DIR$/misc/timit/timit_phoneclasses.txt" />
-        <option value="$PROJECT_DIR$/fhvae/datasets/seg_dataset.py" />
-        <option value="$PROJECT_DIR$/scripts/train/hs_train_loaders.py" />
-        <option value="$PROJECT_DIR$/preprocessing_examples/prepare_timit_numpy.py" />
-        <option value="$PROJECT_DIR$/preprocessing_examples/prepare_aurora_numpy.py" />
-        <option value="$PROJECT_DIR$/configs/timit/config_lstm_complete.cfg" />
-        <option value="$PROJECT_DIR$/scripts/train/run_hs_train.py" />
-        <option value="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir.py" />
-        <option value="$PROJECT_DIR$/fhvae/models/reg_fhvae_transf.py" />
-        <option value="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_unidir.py" />
-        <option value="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_atten.py" />
+        <option value="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm2_bidir.py" />
+        <option value="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm2_unidir.py" />
+        <option value="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm2_atten.py" />
         <option value="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm.py" />
-        <option value="$PROJECT_DIR$/configs/timit/config_attention_39phones.cfg" />
-        <option value="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones.cfg" />
-        <option value="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_2.cfg" />
-        <option value="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_3.cfg" />
-        <option value="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_4.cfg" />
-        <option value="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_5.cfg" />
-        <option value="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_breg.cfg" />
-        <option value="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_small.cfg" />
-        <option value="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_phones.cfg" />
-        <option value="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_phones_breg.cfg" />
-        <option value="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_q.cfg" />
-        <option value="$PROJECT_DIR$/configs/timit/config_lstm_bidirectional_61phones.cfg" />
-        <option value="$PROJECT_DIR$/configs/timit/config_transf_39phones.cfg" />
-        <option value="$PROJECT_DIR$/configs/timit/config_unidirectional_39phones.cfg" />
-        <option value="$PROJECT_DIR$/configs/timit/config_unidirectional_39phones_small.cfg" />
-        <option value="$PROJECT_DIR$/configs/defaults/config.cfg" />
-        <option value="$PROJECT_DIR$/configs/defaults/config_classifier.cfg" />
-        <option value="$PROJECT_DIR$/configs/cgn/config_ko_lstm_bidirectional.cfg" />
-        <option value="$PROJECT_DIR$/configs/cgn/config_afgklno_lstm_bidirectional.cfg" />
-        <option value="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_smallprior.cfg" />
-        <option value="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_smallprior2.cfg" />
-        <option value="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_largeprior.cfg" />
-        <option value="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_largeprior2.cfg" />
+        <option value="$PROJECT_DIR$/fhvae/models/reg_fhvae_transf.py" />
+        <option value="$PROJECT_DIR$/scripts/test/init_model.py" />
+        <option value="$PROJECT_DIR$/scripts/train/init_model.py" />
+        <option value="$PROJECT_DIR$/configs/comparison/unidirectional.cfg" />
+        <option value="$PROJECT_DIR$/configs/comparison/bidirectional.cfg" />
+        <option value="$PROJECT_DIR$/configs/comparison/attention.cfg" />
+        <option value="$PROJECT_DIR$/condor/run_all.sh" />
+        <option value="$PROJECT_DIR$/condor/jobfile_all_cgn.job" />
+        <option value="$PROJECT_DIR$/configs/classifier/config_classifier_cgn_afgklno_multicond.cfg" />
+        <option value="$PROJECT_DIR$/configs/comparison/classifier.cfg" />
+        <option value="$PROJECT_DIR$/configs/comparison_18aug/bidirectional_large.cfg" />
+        <option value="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir_3layers.py" />
+        <option value="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_unidir_3layers.py" />
+        <option value="$PROJECT_DIR$/fhvae/datasets/seq2seg.py" />
+        <option value="$PROJECT_DIR$/misc/cgn/makewavs_CGN.m" />
+        <option value="$PROJECT_DIR$/scripts/preprocess/prepare_numpy_data.py" />
+        <option value="$PROJECT_DIR$/preprocessing_examples/augmentcgn_sequences_noisefilter.m" />
+        <option value="$PROJECT_DIR$/preprocessing_examples/augmentcgn_sequences_noise2.m" />
+        <option value="$PROJECT_DIR$/preprocessing_examples/augmentcgn_sequences_noise1.m" />
+        <option value="$PROJECT_DIR$/preprocessing_examples/augmentcgn_sequences_filter.m" />
+        <option value="$PROJECT_DIR$/configs/comparison_18aug/bidirectional_large_150ms.cfg" />
+        <option value="$PROJECT_DIR$/configs/comparison_18aug/bidirectional_large_250ms.cfg" />
         <option value="$PROJECT_DIR$/scripts/test/run_eval.py" />
+        <option value="$PROJECT_DIR$/misc/cgn/files_to_speakers_split.py" />
+        <option value="$PROJECT_DIR$/preprocessing_examples/augmentcgn_NBEST.m" />
+        <option value="$PROJECT_DIR$/misc/cgn/cgn_testset.list" />
+        <option value="$PROJECT_DIR$/preprocessing_examples/prepare_augmented_cgn_numpy.py" />
+        <option value="$PROJECT_DIR$/fhvae/datasets/seg_dataset.py" />
+        <option value="$PROJECT_DIR$/preprocessing_examples/make_cgn_kaldi.py" />
+        <option value="$PROJECT_DIR$/scripts/train/hs_train_loaders.py" />
+        <option value="$PROJECT_DIR$/scripts/test/eval_loaders.py" />
+        <option value="$PROJECT_DIR$/scripts/save_to_kaldi/run_extract_lvar.py" />
+        <option value="$PROJECT_DIR$/scripts/train/run_hs_train2.py" />
+        <option value="$PROJECT_DIR$/scripts/train/run_hs_train.py" />
+        <option value="$PROJECT_DIR$/fhvae/runners/save_latent_vars.py" />
+        <option value="$PROJECT_DIR$/fhvae/models/init_model.py" />
+        <option value="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir_ORIG.py" />
+        <option value="$PROJECT_DIR$/preprocessing_examples/prepare_cgn_numpy.py" />
+        <option value="$PROJECT_DIR$/preprocessing_examples/make_fac_lang.py" />
+        <option value="$PROJECT_DIR$/preprocessing_examples/combine_with_nl.py" />
+        <option value="$PROJECT_DIR$/preprocessing_examples/augmentcgn.m" />
+        <option value="$PROJECT_DIR$/scripts/save_to_kaldi/run_extract_lvar_unsegmented.py" />
+        <option value="$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi_unsegmented.py" />
+        <option value="$PROJECT_DIR$/preprocessing_examples/cgn_get_feats_for_kaldi.py" />
+        <option value="$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi.py" />
         <option value="$PROJECT_DIR$/fhvae/runners/hs_train_fhvae.py" />
-        <option value="$PROJECT_DIR$/fhvae/runners/test_fhvae.py" />
+        <option value="$PROJECT_DIR$/fhvae/runners/finetuning_fhvae.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="128" />
-    <option name="y" value="86" />
-    <option name="width" value="768" />
-    <option name="height" value="529" />
+    <option name="x" value="137" />
+    <option name="y" value="69" />
+    <option name="width" value="1670" />
+    <option name="height" value="787" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -147,6 +253,28 @@
               <item name="fhvae" type="462c0819:PsiDirectoryNode" />
               <item name="runners" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="JakobFHVAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JakobFHVAE" type="462c0819:PsiDirectoryNode" />
+              <item name="misc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JakobFHVAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JakobFHVAE" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JakobFHVAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JakobFHVAE" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="save_to_kaldi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JakobFHVAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JakobFHVAE" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="train" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -155,11 +283,20 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/fhvae/models" />
+      <recent name="$PROJECT_DIR$/scripts/save_to_kaldi" />
+      <recent name="$PROJECT_DIR$/preprocessing_examples" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/configs/timit" />
+      <recent name="$PROJECT_DIR$/scripts/save_to_kaldi" />
+      <recent name="$PROJECT_DIR$/fhvae/models" />
+      <recent name="$PROJECT_DIR$/preprocessing_examples" />
+      <recent name="$PROJECT_DIR$/configs/comparison_18aug" />
+      <recent name="$PROJECT_DIR$/configs/comparison" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -174,7 +311,364 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run_eval">
+  <component name="RunManager" selected="Python.run_hs_train">
+    <configuration name="cgn_get_feats_for_kaldi NL" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing_examples/cgn_get_feats_for_kaldi.py" />
+      <option name="PARAMETERS" value="--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/cgn_augvl_nl --segments ./misc/cgn/nbest.segments --suffix test" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cgn_get_feats_for_kaldi" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing_examples/cgn_get_feats_for_kaldi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="files_to_speakers_split" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/misc/cgn/files_to_speakers_split.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="fix" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fix.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="fix_multicond_cgn" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing_examples/fix_multicond_cgn.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="make_cgn_kaldi" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing_examples/make_cgn_kaldi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="plot_SNR" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plot_SNR.py" />
+      <option name="PARAMETERS" value="/esat/spchdisk/scratch/jponcele/fhvae_jakob/exp_noisy_29april_copy" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="plot_summary" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plot_summary.py" />
+      <option name="PARAMETERS" value="/esat/spchdisk/scratch/jponcele/fhvae_jakob/compare_NF_cgn" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="prepare_augmented_cgn_numpy CD" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing_examples/prepare_augmented_cgn_numpy.py" />
+      <option name="PARAMETERS" value="/esat/spchtemp/scratch/jponcele/cgn_vl_telephone_sequences_augmented --clean_cgn_dir /esat/spchtemp/scratch/jponcele/cgn_vl_telephone_sequences --out_dir /esat/spchtemp/scratch/jponcele/cgn_vl_telephone_sequences_augmented --ftype fbank" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="prepare_augmented_cgn_numpy" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing_examples/prepare_augmented_cgn_numpy.py" />
+      <option name="PARAMETERS" value="/esat/spchtemp/scratch/jponcele/cgn_allcomps_sequences_augmented --clean_cgn_dir /esat/spchtemp/scratch/jponcele/cgn_allcomps_sequences --out_dir /esat/spchtemp/scratch/jponcele/cgn_allcomps_sequences_augmented --ftype fbank" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="prepare_cgn_numpy CD" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing_examples/prepare_cgn_numpy.py" />
+      <option name="PARAMETERS" value="/esat/spchtemp/scratch/jponcele/cgn_vl_telephone_sequences --ftype fbank --out_dir /esat/spchtemp/scratch/jponcele/cgn_vl_telephone_sequences" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="prepare_cgn_numpy NL" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing_examples/prepare_cgn_numpy.py" />
+      <option name="PARAMETERS" value="/esat/spchtemp/scratch/jponcele/cgn_nl_sequences --ftype fbank --out_dir /esat/spchtemp/scratch/jponcele/cgn_nl_sequences" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="prepare_multicondition_cgn_numpy" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing_examples/prepare_multicondition_cgn_numpy.py" />
+      <option name="PARAMETERS" value="$PROJECT_DIR$/../../spchdata/aurora/CDdata_aurora2/noises /esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/cgn_np_fbank_afgklno_noisy /esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/cgn_np_fbank_afgklno_multicond $PROJECT_DIR$/../NoiseFilter --ftype fbank" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="prepare_multicondition_large_timit_numpy" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing_examples/prepare_multicondition_large_timit_numpy.py" />
+      <option name="PARAMETERS" value="$PROJECT_DIR$/../../spchdata/aurora/CDdata_aurora2/noises /esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/timit_np_fbank_noisy /esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/timit_np_fbank_multicond_large $PROJECT_DIR$/../NoiseFilter --ftype fbank" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="prepare_multicondition_timit_numpy" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing_examples/prepare_multicondition_timit_numpy.py" />
+      <option name="PARAMETERS" value="$PROJECT_DIR$/../../spchdata/aurora/CDdata_aurora2/noises /esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/timit_np_fbank_noisy /esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/timit_np_fbank_multicond $PROJECT_DIR$/../NoiseFilter --ftype fbank" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="prepare_noisy_cgn_numpy" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing_examples/prepare_cgn_numpy.py" />
+      <option name="PARAMETERS" value="/esat/spchtemp/scratch/jponcele/cgn_allcomps_augmented_sequences --ftype fbank --out_dir /esat/spchtemp/scratch/jponcele/cgn_allcomps_augmented_sequences" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="prepare_noisy_timit_numpy" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing_examples/prepare_noisy_timit_numpy.py" />
+      <option name="PARAMETERS" value="$PROJECT_DIR$/../../spchdata/aurora/CDdata_aurora2/noises /esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/timit_np_fbank_4 /esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/timit_np_fbank_noisy $PROJECT_DIR$/../NoiseFilter --ftype fbank" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="prepare_timit_numpy" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="JakobFHVAE" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -196,6 +690,90 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="print_results" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/print_results.py" />
+      <option name="PARAMETERS" value="0" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_classifier" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/classifier/run_classifier.py" />
+      <option name="PARAMETERS" value="--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/cgn_okljmn_h --config configs/classifier/config_classifier_cgn_okljmn_h.cfg" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_classifier_labels" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/classifier/run_classifier.py" />
+      <option name="PARAMETERS" value="--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/15june_GRL --config configs/summary_15june/classifier_timit_noisy.cfg --var z1 --fac gender" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_classifier_z0" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/classifier/run_classifier.py" />
+      <option name="PARAMETERS" value="--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/exp_NEW_z0_normflow_5steps --config configs/summary_15june/classifier_timit_noisy.cfg --var z1" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="run_eval" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="JakobFHVAE" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -209,7 +787,175 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/test/run_eval.py" />
-      <option name="PARAMETERS" value="--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/exp_24april_timit_bidirectional/ --save False" />
+      <option name="PARAMETERS" value="--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/exp_noisy_29april_copy --save True" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_eval_GRL" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/test/run_eval.py" />
+      <option name="PARAMETERS" value="--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/exp_GRL --save False" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_eval_cgn" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/test/run_eval.py" />
+      <option name="PARAMETERS" value="--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/exp_3june_cgn_noisy/test_split/split1 --save False" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_eval_simpletest" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/test/run_eval.py" />
+      <option name="PARAMETERS" value="--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/exp_temptest --save False" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_eval_z0" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/test/run_eval.py" />
+      <option name="PARAMETERS" value="--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/exp_NEW_z0_normflow_5steps --save True" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_extract_lvar nbest _cts" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/save_to_kaldi/run_extract_lvar.py" />
+      <option name="PARAMETERS" value="--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/comparison_1sep/cgn_allcomps_and_telephone --segments ./misc/cgn/nbest_cts.segments --datadir nbest_cts_kaldi_feats --suffix randomtestdelete" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_extract_lvar nbest" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/save_to_kaldi/run_extract_lvar.py" />
+      <option name="PARAMETERS" value="--expdir /esat/spchtemp/scratch/jponcele/fhvae_exps/exp_august/comparison_18aug/bidirectional_large --segments ./misc/cgn/nbest_augmented.segments --datadir nbest_augmented_kaldi_feats --suffix test-augmented" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_extract_lvar" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/save_to_kaldi/run_extract_lvar.py" />
+      <option name="PARAMETERS" value="--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/22july_augcgn" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_extract_lvar_unsegmented" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/save_to_kaldi/run_extract_lvar_unsegmented.py" />
+      <option name="PARAMETERS" value="--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/comparison_18aug/bidirectional_large_unsegmented --datadir cgn_kaldi_feats --lvar z1 --suffix dev" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -230,7 +976,133 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/train/run_hs_train.py" />
-      <option name="PARAMETERS" value="--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/exp_testingnewtrain3 --config configs/timit/config_lstm_complete.cfg" />
+      <option name="PARAMETERS" value="--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/param_tuning/advFHVAE --config configs/param_tuning/advFHVAE.cfg" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_hs_train2" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/train/run_hs_train2.py" />
+      <option name="PARAMETERS" value="--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/testnoisy --config configs/comparison_18aug/bidirectional.cfg" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_hs_train_adv" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/train/run_hs_train.py" />
+      <option name="PARAMETERS" value="--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/testadv --config configs/cgn_multicond/cgn_augmented.cfg" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="save_latent_vars_cgn_okljmn" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/test/run_eval.py" />
+      <option name="PARAMETERS" value="--expdir /esat/spchdisk/scratch/jponcele/fhvae_jakob/cgn_okljmn_h --save True" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="speedtest" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/speedtest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="split_cgn_by_comps" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preprocessing_examples/split_cgn_by_comps.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_fhvae" type="PythonConfigurationType" factoryName="Python">
+      <module name="JakobFHVAE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/fhvae/runners" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fhvae/runners/test_fhvae.py" />
+      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -239,9 +1111,44 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.run_hs_train" />
+      <item itemvalue="Python.cgn_get_feats_for_kaldi NL" />
+      <item itemvalue="Python.cgn_get_feats_for_kaldi" />
+      <item itemvalue="Python.files_to_speakers_split" />
+      <item itemvalue="Python.fix" />
+      <item itemvalue="Python.fix_multicond_cgn" />
+      <item itemvalue="Python.make_cgn_kaldi" />
+      <item itemvalue="Python.plot_SNR" />
+      <item itemvalue="Python.plot_summary" />
+      <item itemvalue="Python.prepare_augmented_cgn_numpy CD" />
+      <item itemvalue="Python.prepare_augmented_cgn_numpy" />
+      <item itemvalue="Python.prepare_cgn_numpy CD" />
+      <item itemvalue="Python.prepare_cgn_numpy NL" />
+      <item itemvalue="Python.prepare_multicondition_cgn_numpy" />
+      <item itemvalue="Python.prepare_multicondition_large_timit_numpy" />
+      <item itemvalue="Python.prepare_multicondition_timit_numpy" />
+      <item itemvalue="Python.prepare_noisy_cgn_numpy" />
+      <item itemvalue="Python.prepare_noisy_timit_numpy" />
       <item itemvalue="Python.prepare_timit_numpy" />
+      <item itemvalue="Python.print_results" />
+      <item itemvalue="Python.run_classifier" />
+      <item itemvalue="Python.run_classifier_labels" />
+      <item itemvalue="Python.run_classifier_z0" />
       <item itemvalue="Python.run_eval" />
+      <item itemvalue="Python.run_eval_GRL" />
+      <item itemvalue="Python.run_eval_cgn" />
+      <item itemvalue="Python.run_eval_simpletest" />
+      <item itemvalue="Python.run_eval_z0" />
+      <item itemvalue="Python.run_extract_lvar nbest" />
+      <item itemvalue="Python.run_extract_lvar nbest _cts" />
+      <item itemvalue="Python.run_extract_lvar" />
+      <item itemvalue="Python.run_extract_lvar_unsegmented" />
+      <item itemvalue="Python.run_hs_train2" />
+      <item itemvalue="Python.run_hs_train" />
+      <item itemvalue="Python.run_hs_train_adv" />
+      <item itemvalue="Python.save_latent_vars_cgn_okljmn" />
+      <item itemvalue="Python.speedtest" />
+      <item itemvalue="Python.split_cgn_by_comps" />
+      <item itemvalue="Python.test_fhvae" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -257,42 +1164,51 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="28" width="1024" height="702" extended-state="6" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.76506025" visible="true" weight="0.204" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.785" visible="true" weight="0.16033755" />
       <window_info id="Structure" order="1" sideWeight="0.23708206" side_tool="true" weight="0.194" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.215" side_tool="true" weight="0.295" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31729054" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.40819964" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32833335" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.862" weight="0.2774123" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.499" weight="0.41118422" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32976827" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.15864527" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.138" side_tool="true" weight="0.40285206" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.31666666" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.384" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.785" visible="true" weight="0.351" />
+      <window_info id="Structure" order="1" sideWeight="0.23708206" side_tool="true" weight="0.194" />
+      <window_info id="Favorites" order="2" sideWeight="0.215" side_tool="true" weight="0.295" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32833335" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.862" weight="0.285" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.499" weight="0.385" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32976827" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.138" side_tool="true" weight="0.40285206" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.31666666" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -302,59 +1218,209 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/classifier/run_classifier.py</url>
-          <line>48</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/classifier/run_classifier.py</url>
-          <line>47</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fhvae/runners/test_fhvae.py</url>
-          <line>529</line>
+          <line>984</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fhvae/runners/test_fhvae.py</url>
-          <line>534</line>
+          <line>989</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fhvae/runners/test_fhvae.py</url>
-          <line>550</line>
+          <line>1005</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fhvae/runners/test_fhvae.py</url>
-          <line>551</line>
+          <line>1006</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fhvae/runners/test_fhvae.py</url>
-          <line>554</line>
+          <line>1009</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/fhvae/runners/hs_train_fhvae.py</url>
-          <line>155</line>
-          <option name="timeStamp" value="35" />
+          <url>file://$PROJECT_DIR$/fhvae/datasets/seg_dataset.py</url>
+          <line>88</line>
+          <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/fhvae/runners/hs_train_fhvae.py</url>
-          <line>285</line>
-          <option name="timeStamp" value="37" />
+          <url>file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_OLD.py</url>
+          <line>130</line>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fhvae/runners/test_fhvae.py</url>
+          <line>854</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fhvae/runners/test_fhvae.py</url>
+          <line>906</line>
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fhvae/runners/test_fhvae.py</url>
+          <line>594</line>
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fhvae/runners/test_fhvae.py</url>
+          <line>692</line>
+          <option name="timeStamp" value="141" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fhvae/runners/test_fhvae.py</url>
+          <line>690</line>
+          <option name="timeStamp" value="142" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fhvae/runners/test_fhvae.py</url>
+          <line>665</line>
+          <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fhvae/runners/test_fhvae.py</url>
+          <line>343</line>
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fhvae/runners/test_fhvae.py</url>
+          <line>379</line>
+          <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fhvae/runners/test_fhvae.py</url>
+          <line>378</line>
+          <option name="timeStamp" value="146" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fhvae/runners/test_fhvae.py</url>
+          <line>337</line>
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fhvae/runners/test_fhvae.py</url>
+          <line>261</line>
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fhvae/runners/test_fhvae.py</url>
+          <line>601</line>
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/plot_summary.py</url>
+          <line>105</line>
+          <option name="timeStamp" value="159" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_OLD.py</url>
+          <line>145</line>
+          <option name="timeStamp" value="176" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_OLD.py</url>
+          <line>149</line>
+          <option name="timeStamp" value="181" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/classifier/run_classifier.py</url>
+          <line>94</line>
+          <option name="timeStamp" value="186" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/classifier/load_classifier_data.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="187" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/classifier/load_classifier_data.py</url>
+          <line>50</line>
+          <option name="timeStamp" value="188" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/test/run_eval.py</url>
+          <line>99</line>
+          <option name="timeStamp" value="189" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fhvae/runners/save_latent_vars.py</url>
+          <line>57</line>
+          <option name="timeStamp" value="190" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fhvae/runners/save_latent_vars.py</url>
+          <line>166</line>
+          <option name="timeStamp" value="191" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fhvae/runners/save_latent_vars.py</url>
+          <line>234</line>
+          <option name="timeStamp" value="192" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi.py</url>
+          <line>88</line>
+          <option name="timeStamp" value="202" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi.py</url>
+          <line>46</line>
+          <option name="timeStamp" value="203" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi.py</url>
+          <line>112</line>
+          <option name="timeStamp" value="208" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/preprocessing_examples/cgn_get_feats_for_kaldi.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="209" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fhvae/datasets/seq2seg.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="226" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm.py</url>
-          <line>54</line>
-          <option name="timeStamp" value="39" />
+          <line>140</line>
+          <option name="timeStamp" value="227" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir.py</url>
+          <url>file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm.py</url>
+          <line>141</line>
+          <option name="timeStamp" value="228" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi.py</url>
+          <line>73</line>
+          <option name="timeStamp" value="230" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi.py</url>
           <line>74</line>
-          <option name="timeStamp" value="41" />
+          <option name="timeStamp" value="231" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi_unsegmented.py</url>
+          <line>79</line>
+          <option name="timeStamp" value="232" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi_unsegmented.py</url>
+          <line>84</line>
+          <option name="timeStamp" value="233" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi_unsegmented.py</url>
+          <line>85</line>
+          <option name="timeStamp" value="234" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -362,51 +1428,172 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scripts/classifier/run_classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="27" selection-start-line="27" selection-end-line="28" selection-end-column="30" />
+        <state relative-caret-position="271">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/prepare_multicondition_large_timit_numpy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/misc/cgn/makewavs_CGN.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="93" selection-start-line="12" selection-start-column="93" selection-end-line="12" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/preprocess/prepare_numpy_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="98" column="28" lean-forward="true" selection-start-line="98" selection-start-column="28" selection-end-line="98" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn_sequences_noisefilter.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="176" lean-forward="true" selection-start-line="176" selection-end-line="176" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn_sequences_noise2.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn_sequences_noise1.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn_sequences_filter.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/comparison_18aug/bidirectional.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1185">
+          <caret line="80" column="19" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/comparison_18aug/bidirectional_large_250ms.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/comparison_18aug/bidirectional_large_150ms.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="253" column="55" selection-start-line="253" selection-start-column="55" selection-end-line="253" selection-end-column="55" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/find_glottal.py" />
-    <entry file="file://$PROJECT_DIR$/misc/timit/phone_map_60_48_39.txt">
+    <entry file="file://$PROJECT_DIR$/scripts/test/run_eval.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/misc/timit/timit_phoneclasses.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fhvae/datasets/seq_dataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5580">
+        <state relative-caret-position="90">
+          <caret line="68" column="159" selection-start-line="68" selection-start-column="159" selection-end-line="68" selection-end-column="159" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/misc/cgn/cgn_per_spk_afgklno_dev.list">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/misc/cgn/speakers_regions.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/misc/cgn/cgn_per_spk_afgklno_test.list">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn_NBEST.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn_sequences.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1863" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn_filter.m">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/misc/cgn/comps_devset.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/misc/cgn/cgn_testset.list">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="793">
+          <caret line="187" column="6" selection-start-line="187" selection-start-column="6" selection-end-line="187" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/prepare_augmented_cgn_numpy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1845">
+          <caret line="128" selection-start-line="128" selection-end-line="128" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fhvae/datasets/seg_dataset.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="1217">
+          <caret line="108" column="55" selection-start-line="108" selection-start-column="47" selection-end-line="108" selection-end-column="55" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/fhvae/datasets/seq2seg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/test/eval_loaders.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-950">
+        <state relative-caret-position="30">
+          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -415,318 +1602,217 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/train/hs_train_loaders.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/train/run_hs_train2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="66" column="26" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fhvae/runners/save_latent_vars.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" column="21" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="21" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/preprocess/prepare_numpy_data.py">
+    <entry file="file://$PROJECT_DIR$/fhvae/models/init_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="82" selection-start-line="14" selection-start-column="82" selection-end-line="14" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir_ORIG.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1335">
+          <caret line="130" selection-start-line="130" selection-end-line="130" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="826">
+          <caret line="114" selection-start-line="114" selection-end-line="114" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/prepare_multicondition_cgn_numpy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1035">
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/prepare_noisy_cgn_numpy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing_examples/prepare_cgn_numpy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-110">
-          <caret line="156" column="41" lean-forward="true" selection-start-line="156" selection-start-column="41" selection-end-line="156" selection-end-column="41" />
-          <folding>
-            <element signature="e#231#240#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="165">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing_examples/prepare_timit_numpy.py">
+    <entry file="file://$PROJECT_DIR$/misc/cgn/files_to_speakers_split.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="87" column="46" selection-start-line="87" selection-start-column="46" selection-end-line="87" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="135">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing_examples/prepare_aurora_numpy.py">
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/split_cgn_by_comps.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="90">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file:///esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/lib/python3.6/site-packages/tensorflow_core/python/util/dispatch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="178" selection-start-line="178" selection-end-line="178" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/lib/python3.6/site-packages/tensorflow_core/python/ops/array_ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="893" selection-start-line="893" selection-end-line="893" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fhvae/models/reg_fhvae_transf.py">
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/make_cgn_kaldi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="9" column="349" selection-start-line="9" selection-start-column="349" selection-end-line="9" selection-end-column="349" />
+          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_unidir.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="137" selection-start-line="10" selection-start-column="137" selection-end-line="10" selection-end-column="137" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="7" column="103" lean-forward="true" selection-start-line="7" selection-start-column="103" selection-end-line="7" selection-end-column="103" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_atten.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="137" selection-start-line="11" selection-start-column="137" selection-end-line="11" selection-end-column="137" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_attention_39phones.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_3.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_4.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_5.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_breg.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_transf_39phones.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_unidirectional_39phones.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_unidirectional_39phones_small.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_lstm_complete.cfg">
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/make_fac_lang.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="40" selection-start-line="40" selection-end-line="41" selection-end-column="29" />
+          <caret line="2" column="75" selection-start-line="2" selection-start-column="75" selection-end-line="2" selection-end-column="75" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_lstm_bidirectional_61phones.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_q.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_phones_breg.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_phones.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_small.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/classifier/config_classifier_timit_39phones.cfg">
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn.m">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/classifier/config_classifier_timit_61phones.cfg">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/classifier/config_classifier_timit_39phones_without_q.cfg">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/defaults/config_classifier.cfg">
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/combine_with_nl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/cgn/config_afgklno_lstm_bidirectional.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/cgn/config_ko_lstm_bidirectional.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/defaults/config.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_2.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_bidirectional_39phones.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_smallprior.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="35" column="13" lean-forward="true" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_largeprior2.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_largeprior.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_smallprior2.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        <state relative-caret-position="330">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fhvae/runners/save_latent_vars.py">
+    <entry file="file:///esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/lib/python3.6/site-packages/tensorflow/python/eager/context.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1296">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="28" />
+        <state relative-caret-position="1384">
+          <caret line="2104" selection-start-line="2104" selection-end-line="2104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/lib/python3.6/site-packages/tensorflow/python/eager/executor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi_unsegmented.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20">
+          <caret line="77" column="36" lean-forward="true" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/save_to_kaldi/run_extract_lvar_unsegmented.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fhvae/datasets/seq_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="460" selection-start-line="460" selection-end-line="460" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/test/run_eval.py">
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/cgn_get_feats_for_kaldi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-768">
-          <caret line="102" column="78" selection-start-line="102" selection-start-column="78" selection-end-line="102" selection-end-column="78" />
+        <state relative-caret-position="240">
+          <caret line="16" column="74" lean-forward="true" selection-start-line="16" selection-start-column="74" selection-end-line="16" selection-end-column="74" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/fhvae/runners/finetuning_fhvae.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="456" column="65" selection-start-line="456" selection-start-column="65" selection-end-line="456" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#3286#3753#0" />
+            <element signature="e#3804#4301#0" />
+            <element signature="e#4357#4825#0" />
+            <element signature="e#4887#5385#0" />
+            <element signature="e#5431#6388#0" />
+            <element signature="e#6484#9184#0" />
+            <element signature="e#9236#10208#0" />
+            <element signature="e#10310#12531#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/train/run_hs_train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="118" column="533" selection-start-line="118" selection-start-column="533" selection-end-line="118" selection-end-column="533" />
+        <state relative-caret-position="-85">
+          <caret line="83" column="21" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="33" column="99" selection-start-line="33" selection-start-column="99" selection-end-line="33" selection-end-column="99" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/save_to_kaldi/run_extract_lvar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
@@ -735,18 +1821,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fhvae/runners/hs_train_fhvae.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="236" column="26" selection-start-line="236" selection-start-column="26" selection-end-line="236" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fhvae/runners/test_fhvae.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="348">
+          <caret line="38" column="39" lean-forward="true" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>

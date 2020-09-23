@@ -1,0 +1,24 @@
+Universe = vanilla
+
+RequestCpus = 8
+RequestMemory = 7G
++RequestWallTime = 86400
+request_GPUs = 1
+
+Requirements = (CUDACapability >= 3.5)\
+  &&(CUDAGlobalMemoryMb >= 3000)\
+  &&(Has_avx)
+
+NiceUser = True
+initialdir = /users/spraak/jponcele/JakobFHVAE
+
+Executable = /esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python
+Arguments = "./preprocessing_examples/prepare_augmented_cgn_numpy.py /esat/spchtemp/scratch/jponcele/cgn_allcomps_sequences_augmented --clean_cgn_dir /esat/spchtemp/scratch/jponcele/cgn_allcomps_sequences --out_dir /esat/spchtemp/scratch/jponcele/cgn_allcomps_sequences_augmented --ftype fbank"
+
+Log          = /esat/spchtemp/scratch/jponcele/cgn_allcomps_sequences_augmented/condor/condor_prep.log
+Output       = /esat/spchtemp/scratch/jponcele/cgn_allcomps_sequences_augmented/condor/condor_prep.out
+Error        = /esat/spchtemp/scratch/jponcele/cgn_allcomps_sequences_augmented/condor/condor_prep.err
+
+# usage: condor_submit jobfile.job expdir=/esat/spchdisk/scratch/jponcele/fhvae_jakob/exp config=/users/spraak/jponcele/JakobFHVAE/config.cfg
+
+Queue

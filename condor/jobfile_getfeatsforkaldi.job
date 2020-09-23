@@ -1,0 +1,25 @@
+Universe = vanilla
+
+RequestCpus = 8
+RequestMemory = 4G
++RequestWallTime = 86400
+request_GPUs = 0
+
+#Requirements = (CUDACapability >= 3.5)\
+#  &&(CUDAGlobalMemoryMb >= 3000)\
+#  &&(Has_avx)\
+Requirements = Has_avx
+
+NiceUser = True
+initialdir = /users/spraak/jponcele/JakobFHVAE
+
+Executable = /esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python
+Arguments = "preprocessing_examples/cgn_get_feats_for_kaldi.py"
+
+Log          = /users/spraak/jponcele/condor_prep/condor_prep.log
+Output       = /users/spraak/jponcele/condor_prep/condor_prep.out
+Error        = /users/spraak/jponcele/condor_prep/condor_prep.err
+
+# usage: condor_submit jobfile.job expdir=/esat/spchdisk/scratch/jponcele/fhvae_jakob/exp config=/users/spraak/jponcele/JakobFHVAE/config.cfg
+
+Queue

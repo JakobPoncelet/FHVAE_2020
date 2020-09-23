@@ -1,24 +1,13 @@
 Universe = vanilla
 
 RequestCpus = 8
-RequestMemory = 10G
-+RequestWallTime = 36000
+RequestMemory = 14G
++RequestWallTime = 50000
 request_GPUs = 1
 
 Requirements = (CUDACapability >= 3.5)\
   &&(CUDAGlobalMemoryMb >= 3000)\
-  &&(machine!="spchcl23.esat.kuleuven.be")\
-  &&(machine!="spchcl24.esat.kuleuven.be")\
-  &&(machine!="molder.esat.kuleuven.be")\
-  &&(machine!="blanche.esat.kuleuven.be")\
-  &&(machine!="yperman.esat.kuleuven.be")\
-  &&(machine!="bornholm.esat.kuleuven.be")\
-  &&(machine!="kiviuq.esat.kuleuven.be")\
-  &&(machine!="spchcl18.esat.kuleuven.be")\
-  &&(machine!="spchcl19.esat.kuleuven.be")\
-  &&(machine!="spchcl21.esat.kuleuven.be")\
-  &&(machine!="spchcl17.esat.kuleuven.be")\
-  &&(machine!="estragon.esat.kuleuven.be")
+  &&(Has_avx)
 
 NiceUser = true
 initialdir = /users/spraak/jponcele/JakobFHVAE

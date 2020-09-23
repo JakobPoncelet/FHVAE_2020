@@ -3,6 +3,8 @@ prepare CGN data for FHVAE
 
 ## COMMAND PARAMETERS:
 /esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/cgn_np_fbank_afgklno --ftype fbank --out_dir /esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/cgn_np_fbank_afgklno
+
+/esat/spchtemp/scratch/jponcele/cgn_nl_sequences --ftype fbank --out_dir /esat/spchtemp/scratch/jponcele/cgn_nl_sequences
 """
 import os
 import wave
@@ -26,8 +28,12 @@ NOTE: the matlab file can give an alarm for some wav files and doesnt store the 
 In this script those wav files are filtered out (line 139), but might be better to change when working with unsupervised data, i.e. add them to the files but empty factors.
 """
 
-componentslist = ["comp-a", "comp-f", "comp-g", "comp-k", "comp-l", "comp-n", "comp-o"]
+#componentslist = ["comp-a", "comp-f", "comp-g", "comp-k", "comp-l", "comp-n", "comp-o"]
 # componentslist = ["comp-k", "comp-o"]
+#componentslist = ["comp-a", "comp-b", "comp-e", "comp-f", "comp-g", "comp-h", "comp-i", "comp-j", "comp-k", "comp-l", "comp-m", "comp-n", "comp-o"]
+#componentslist = ["comp-c", "comp-d"]
+
+componentslist = ["comp-a", "comp-b", "comp-c", "comp-d", "comp-e", "comp-f", "comp-g", "comp-h", "comp-i", "comp-j", "comp-k", "comp-l", "comp-m", "comp-n", "comp-o"]
 
 def maybe_makedir(d):
     try:
@@ -57,8 +63,9 @@ with open(args.dev_spk) as f:
     dt_spks = [line.rstrip().lower() for line in f]
 with open(args.test_spk) as f:
     tt_spks = [line.rstrip().lower() for line in f]
-# dt_spks=[]
-# tt_spks=[]
+
+dt_spks=[]
+tt_spks=[]
 
 
 # compute regularizing factors
@@ -185,7 +192,7 @@ def compute_feature(name):
         raise RuntimeError("Non-zero (%d) return code for `%s`" % (p.returncode, " ".join(cmd)))
 
 
-for name in ["train", "dev", "test"]:
+for name in ["train"]:  #, "dev", "test"]:
     compute_feature(name)
 
 print("computed features")

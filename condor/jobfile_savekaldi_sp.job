@@ -1,0 +1,22 @@
+Universe = vanilla
+
+RequestCpus = 8
+RequestMemory = 14G
++RequestWallTime = 86400
+request_GPUs = 1
+
+Requirements = (CUDACapability >= 3.5)\
+  &&(CUDAGlobalMemoryMb >= 6000)\
+  &&(Has_avx)
+
+NiceUser = True
+initialdir = /users/spraak/jponcele/JakobFHVAE
+
+Executable = /esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python
+Arguments = "./scripts/save_to_kaldi/run_extract_lvar.py --expdir $(expdir) --datadir $(datadir) --segments $(segments) --suffix $(suffix) --speed_factor $(speed_factor)"
+
+Log          = $(expdir)/condor_extract_$(suffix)_sp$(speed_factor).log
+Output       = $(expdir)/condor_extract_$(suffix)_sp$(speed_factor).out
+Error        = $(expdir)/condor_extract_$(suffix)_sp$(speed_factor).err
+
+Queue

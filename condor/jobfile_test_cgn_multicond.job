@@ -1,0 +1,24 @@
+Universe = vanilla
+
+RequestCpus = 8
+RequestMemory = 20G
++RequestWallTime = 100000
+request_GPUs = 1
+
+Requirements = (CUDACapability >= 3.5)\
+  &&(CUDAGlobalMemoryMb >= 5000)\
+  &&(Has_avx)
+
+NiceUser = true
+initialdir = /users/spraak/jponcele/JakobFHVAE
+
+Executable = /esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python
+Arguments = "scripts/test/run_eval.py --expdir $(expdir) --save True"
+
+Log          = $(expdir)/condor_test.log
+Output       = $(expdir)/condor_test.out
+Error        = $(expdir)/condor_test.err
+
+# usage: condor_submit jobfile.job expdir=/esat/spchdisk/scratch/jponcele/fhvae_jakob/exp config=/users/spraak/jponcele/JakobFHVAE/config.cfg
+
+Queue

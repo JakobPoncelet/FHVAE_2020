@@ -1,0 +1,25 @@
+Universe = vanilla
+
+RequestCpus = 4
+RequestMemory = 14G
++RequestWallTime = 200000
+request_GPUs = 1
+
+Requirements = (CUDACapability >= 5.0)\
+  &&(CUDAGlobalMemoryMb >= 5000)\
+  &&(Has_avx)\
+  &&(machine!="molder.esat.kuleuven.be")
+
+NiceUser = true
+initialdir = /users/spraak/jponcele/JakobFHVAE
+
+Executable = /esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python
+Arguments = "scripts/train/run_hs_train2.py --expdir $(expdir) --config $(config)"
+
+Log          = $(expdir)/condor_train.log
+Output       = $(expdir)/condor_train.out
+Error        = $(expdir)/condor_train.err
+
+# usage: condor_submit jobfile.job expdir=/esat/spchdisk/scratch/jponcele/fhvae_jakob/exp config=/users/spraak/jponcele/JakobFHVAE/config.cfg
+
+Queue

@@ -1,0 +1,22 @@
+Universe = vanilla
+
+RequestCpus = 8
+RequestMemory = 10G
++RequestWallTime = 30000
+request_GPUs = 1
+
+Requirements = (CUDACapability >= 3.5)\
+  &&(CUDAGlobalMemoryMb >= 3000)\
+  &&(Has_avx)
+
+NiceUser = True
+initialdir = /users/spraak/jponcele/JakobFHVAE
+
+Executable = /esat/spchdisk/scratch/jponcele/anaconda3/envs/tf21/bin/python
+Arguments = "./scripts/save_to_kaldi/run_extract_lvar.py --expdir $(expdir) --datadir cgn_kaldi_feats --segments ./misc/cgn/vl_without_a.segments --suffix train"
+
+Log          = $(expdir)/condor_extract_$(suffix).log
+Output       = $(expdir)/condor_extract_$(suffix).out
+Error        = $(expdir)/condor_extract_$(suffix).err
+
+Queue

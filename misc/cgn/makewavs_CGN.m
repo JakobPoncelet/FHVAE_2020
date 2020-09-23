@@ -1,21 +1,41 @@
 % makewavs003: write phone labels in talab-file and wavs
 % CGN-data orthographic transcriptions
 % take all speech of the same speaker in a file together.
-
+clear all
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%SETUP%%%
 indir='/users/spraak/spchdata/cgn/CDdata/CGN_V2.0_tst_ann/data/annot/text/awd/';
-cgndir='/users/spraak/spchdata/cgn/wav/';
+%cgndir='/users/spraak/spchdata/cgn/wav/';
+cgndir='/esat/spchdisk/scratch/bbagher/kaldi/egs/CGN/data-nl/local/data/wav-data/users/spraak/spchdata/cgn/sam/';
+
 
 %outdir='/esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/cgn_np_fbank_afgklno/wav/';
 %talabfile='/esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/cgn_np_fbank_afgklno/fac/all_facs_phones.scp';
 %components='afgklno';
 
-% make an empty 'wav' and 'fac' directory first
-outdir='/esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/cgn_np_fbank_ko/wav/';
-talabfile='/esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/cgn_np_fbank_ko/fac/all_facs_phones.scp';
-components='ko';
+%% make an empty 'wav' and 'fac' directory first
+%outdir='/esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/cgn_np_fbank_ko/wav/';
+%talabfile='/esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/cgn_np_fbank_ko/fac/all_facs_phones.scp';
+%components='ko';
 
+%outdir='/esat/spchtemp/scratch/jponcele/cgn_allcomps_augmented_sequences/wav/';
+%talabfile='/esat/spchtemp/scratch/jponcele/cgn_allcomps_augmented_sequences/fac/all_facs_phones.scp';
+%components='abefghijklmno';
+
+%outdir='/esat/spchtemp/scratch/jponcele/cgn_nl_sequences/wav/';
+%talabfile='/esat/spchtemp/scratch/jponcele/cgn_nl_sequences/fac/all_facs_phones.scp';
+%components='abefghijklmno';
+
+%outdir='/esat/spchtemp/scratch/jponcele/cgn_vl_telephone_sequences/wav/';
+%talabfile='/esat/spchtemp/scratch/jponcele/cgn_vl_telephone_sequences/fac/all_facs_phones.scp';
+%components='cd';
+
+outdir='/esat/spchtemp/scratch/jponcele/cgn_nl_sequences/wav/'
+talabfile='/esat/spchtemp/scratch/jponcele/cgn_nl_sequences/fac/all_facs_phones.scp';
+components='abcdefghijklmno';
+
+lang='/nl/';
+%lang='/vl/';
 
 pho={'[]','sil','p','t','k','b','d','g','f','v','s','z','S','Z','x','G',...
     'h','N','m','n','J','l','r','w','j','I','E','A','O','Y','i','y','e',...
@@ -23,21 +43,40 @@ pho={'[]','sil','p','t','k','b','d','g','f','v','s','z','S','Z','x','G',...
 
 TargetLength = 2000; % target length of cut wav files, in frames of 10ms
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+sumfile=[outdir 'split_details.txt'];
+outfile=[outdir 'split_log.txt'];
+sumfid=fopen(sumfile,'w');
+outfid=fopen(outfile,'w');
 tafid=fopen(talabfile,'wb');
-for comp=1:length(components)
-seldir=['comp-' components(comp) '/vl/'];
-unix(['mkdir -p ' outdir seldir]);
-if ismember(components(comp),{'f','l'}) suff='_A0'; else suff=''; end;
+fprintf(sumfid,'### CGN FILES SPLIT IN SEQUENCES WITH MAKEWAVS_CGN.M ###');
 
+for comp=1:length(components)
+seldir=['comp-' components(comp) lang];
+unix(['mkdir -p ' outdir seldir]);
+if strcmp(lang,'/vl/')
+    if ismember(components(comp),{'f','l'}) 
+        suff='_A0'; 
+    else
+        suff='';
+    end
+else
+    suff='';
+end
+fprintf(sumfid,'\nCOMPONENT = %s',components(comp));
 files=dir([indir seldir '*.awd.gz']);
 for k=1:length(files)
   fprintf('\n%s %d/%d: %s - ',components(comp),k,length(files),files(k).name);
+  fprintf(outfid,'\n%s %d/%d: %s - ',components(comp),k,length(files),files(k).name);
   gunzip(fullfile(files(k).folder,files(k).name),'.');
   fileid=files(k).name(1:end-7);
+  fprintf(sumfid,'\nFILE: %s - SPEAKERS: ',fileid);
   if ~exist([cgndir seldir fileid suff '.wav'],'file') continue;end
   [sam,fs]=audioread([cgndir seldir fileid suff '.wav']);
-  if fs~=16000 error('sample freq'); end
+  %if fs~=16000 error('sample freq'); end
+  if fs<16000
+      sam=resample(sam,16000,fs);
+      fs=16000;
+  end
   sam=mean(sam,2);
   Nseg=0;Nentry=0;
   fid=fopen(files(k).name(1:end-3));
@@ -56,7 +95,9 @@ for k=1:length(files)
     nSpk=nSpk+1;
     spkid{nSpk}=lower(D{2}(1:end-5));spkid{nSpk}(spkid{nSpk}=='"')=[];
     instance=0;
-    fprintf(' %s',spkid{nSpk})
+    fprintf(' %s',spkid{nSpk});
+    fprintf(outfid,' %s',spkid{nSpk});
+    fprintf(sumfid,' %s',spkid{nSpk});
     Nentry=Nentry+1;
     starttimes{nSpk}=cellfun(@str2num,C(1:3:end));
     endtimes{nSpk}=cellfun(@str2num,C(2:3:end));
@@ -111,11 +152,17 @@ for k=1:length(files)
   alarm = length(sam)/fs*100 < length(label)-1;
   spknr(floor(length(sam)/fs*100):end)=0;
   
-  if alarm fprintf('\nCheck:');end
+  if alarm 
+      fprintf('\nCheck:');
+      fprintf(outfid,'\nCheck:');
+  end
   for spk=1:nSpk,  
     instance=0;
     wavfname=[outdir seldir spkid{spk} '_%d.wav'];
-    if alarm fprintf(['\n  ' spkid{spk} ' : ']);end
+    if alarm 
+        fprintf(['\n  ' spkid{spk} ' : ']);
+        fprintf(outfid,['\n  ' spkid{spk} ' : ']);
+    end
     rng=find(spknr==spk);
     [it,frq]=packul(label(rng));
     endpoints=cumsum(frq);
@@ -129,12 +176,18 @@ for k=1:length(files)
     cutpoints=[0 endpoints(ii(argmin)) endpoints(end)];
     jj=1;
     instance=0;
+    fprintf(sumfid,'\n');
     for kkk=2:length(cutpoints)
         frames=rng(cutpoints(kkk-1)+1:cutpoints(kkk));
         thisspeaker=sam(dbl_pnt([fs/100*frames+1;fs/100*(frames+1)]));
         while exist(sprintf(wavfname,instance),'file') instance=instance+1;end
+        if isempty(thisspeaker) continue;end  %voor nl
         audiowrite(sprintf(wavfname,instance),thisspeaker,fs);
-        if alarm fprintf('%d ',instance);end
+        fprintf(sumfid,'%s_%d ',spkid{spk},instance);
+        if alarm 
+            fprintf('%d ',instance);
+            fprintf(outfid,'%d ',instance);
+        end
         fprintf(tafid,[spkid{spk} '_%d_%s\n'],instance,components(comp));
         t0=endpoints(jj)-frq(jj);
         while (jj<=length(endpoints)) & (endpoints(jj)<=cutpoints(kkk))
@@ -148,6 +201,8 @@ end
 
 end % comp
 fclose(tafid);
+fclose(sumfid);
+fclose(outfid);
 
 function [Items,Freq]=packul(List);
 % packul:   return Freq(uency) with which Items occur in ORDERED List.

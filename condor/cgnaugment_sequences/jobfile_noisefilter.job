@@ -1,0 +1,18 @@
+Universe = vanilla
+RequestCpus = 8
+Request_GPUs = 0
+RequestMemory = 4G
++RequestWalltime = 30000
+
+NiceUser = true
+
+Initialdir = /users/spraak/jponcele/JakobFHVAE/preprocessing_examples
+Executable = /software/bin/matlab
+Arguments = -nojvm -nodisplay -r maxNumCompThreads($(RequestCpus));
+
+Input = augmentcgn_sequences_noisefilter.m
+Log = /esat/spchtemp/scratch/jponcele/cgn_vl_telephone_sequences_augmented/condor/condor_noisefilter.log
+Output = /esat/spchtemp/scratch/jponcele/cgn_vl_telephone_sequences_augmented/condor/condor_noisefilter.out
+Error = /esat/spchtemp/scratch/jponcele/cgn_vl_telephone_sequences_augmented/condor/condor_noisefilter.err
+
+Queue

@@ -5,10 +5,14 @@ from fhvae.datasets.seg_dataset import NumpySegmentDataset
 np.random.seed(123)
 
 
-def load_data_reg(name, set_name, seqlist_path=None, lab_names=None, talab_names=None, train_talab_vals=None):
+def load_data_reg(name, set_name, seqlist_path=None, lab_names=None, talab_names=None, train_talab_vals=None, seg_len=20, mvn=True):
     root = "./datasets/%s" % name
-    mvn_path = "%s/train/mvn.pkl" % root
-    seg_len = 20  # 15
+
+    if mvn:
+        mvn_path = "%s/train/mvn.pkl" % root
+    else:
+        mvn_path = None
+
     Dataset = NumpySegmentDataset
 
     if lab_names is not None:
@@ -24,7 +28,8 @@ def load_data_reg(name, set_name, seqlist_path=None, lab_names=None, talab_names
         "%s/%s/feats.scp" % (root, set_name), "%s/%s/len.scp" % (root, set_name),
         lab_specs=lab_specs, talab_specs=talab_specs,
         min_len=seg_len, preload=False, mvn_path=mvn_path,
-        seg_len=seg_len, seg_shift=seg_len, rand_seg=False, copy_from=None, train_talabs=train_talab_vals)
+        seg_len=seg_len, seg_shift=seg_len, rand_seg=False, copy_from=None, train_talabs=train_talab_vals,
+        num_noisy_versions=0)
 
     return _load_reg(tt_dset) + (tt_dset,)
 

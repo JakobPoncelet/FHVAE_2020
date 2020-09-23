@@ -12,7 +12,12 @@ from .audio_utils import *
 def scp2dict(path, dtype=str, seqlist=None, lab=False):
     with open(path) as f:
         # s = [line.rstrip() for line in f]
+
+        # JAKOB 10 july
+        #line = f.readline()
+
         l = [line.rstrip().split(None, 1) for line in f]
+
     d = OrderedDict([(k, dtype(v)) for k, v in l])
     if seqlist is not None:
             d = subset_d(d, seqlist, lab)
@@ -291,7 +296,7 @@ class Labels(object):
 
 
 class SequenceDataset(object):
-    def __init__(self, feat_scp, len_scp, lab_specs=[], talab_specs=[], min_len=1, copy_from=None, train_talabs=None):
+    def __init__(self, feat_scp, len_scp, lab_specs=[], talab_specs=[], min_len=1, copy_from=None, train_talabs=None, num_noisy_versions=None):
         """
         Args:
             feat_scp(str): feature scp path
@@ -307,7 +312,28 @@ class SequenceDataset(object):
         feats = scp2dict(feat_scp)
         lens = scp2dict(len_scp, int, list(feats.keys()))
 
-        self.seqlist = [k for k in list(feats.keys()) if lens[k] >= min_len]
+        # self.seqlist = [k for k in list(feats.keys()) if lens[k] >= min_len]
+        # self.seq2idx = dict([(seq, i) for i, seq in enumerate(self.seqlist)])
+
+        seqlist = [k for k in list(feats.keys()) if lens[k] >= min_len]
+        indices = np.argsort([x.replace('_','-') for x in seqlist])
+        self.seqlist = [seqlist[i] for i in indices]
+        self.clean_seqlist = [seq for seq in self.seqlist if 'dB' not in seq]
+        self.noisy_seqlist = [seq for seq in self.seqlist if 'dB' in seq]
+
+        # only remember clean seqs, get idx of noisy by mapping to clean
+        self.seq2idx = dict([(seq, i) for i, seq in enumerate(self.clean_seqlist)])
+
+        self.num_noisy_versions = num_noisy_versions
+
+        # # use key of clean file for the noisy versions of that file
+        # if self.num_noisy_versions is not None and self.num_noisy_versions > 0:
+        #     self.seq2idx = dict([(seq, i) for i, seq in enumerate(self.clean_seqlist)])
+        #     for i, seq in enumerate(self.noisy_seqlist):
+        #         self.seq2idx[seq] = i // self.num_noisy_versions
+        # else:
+        #     self.seq2idx = dict([(seq, i) for i, seq in enumerate(self.seqlist)])
+
         self.feats = OrderedDict([(k, feats[k]) for k in self.seqlist])
         self.lens = OrderedDict([(k, lens[k]) for k in self.seqlist])
         print(("%s: %s out of %s kept, min_len = %d" % (
@@ -316,20 +342,19 @@ class SequenceDataset(object):
         self.labs_d = OrderedDict()
         for lab_spec in lab_specs:
             if lab_spec[0] == "spk":  # don't copy speaker info: dev speakers don't overlap with trn speakers in mu2-table
-                name, nclass, seq2lab = load_lab(lab_spec, self.seqlist)
+                name, nclass, seq2lab = load_lab(lab_spec, self.clean_seqlist)
             else:
-                name, nclass, seq2lab = load_lab(lab_spec, self.seqlist, copy_from)
+                name, nclass, seq2lab = load_lab(lab_spec, self.clean_seqlist, copy_from)
             #name, nclass, seq2lab = load_lab(lab_spec, self.seqlist)
             self.labs_d[name] = Labels(name, nclass, seq2lab)
         self.talabseqs_d = OrderedDict()
         self.talabseqs_d_new = OrderedDict()
         self.talab_vals = OrderedDict()
         for talab_spec in talab_specs:
-            name, nclass, talab_vals, seq2talab_newform = load_talab(talab_spec, self.lens, self.seqlist, copy_from, train_talabs)
+            name, nclass, talab_vals, seq2talab_newform = load_talab(talab_spec, self.lens, self.clean_seqlist, copy_from, train_talabs)
             self.talab_vals[name] = talab_vals
             self.talabseqs_d_new[name] = seq2talab_newform.copy()
 
-        self.seq2idx = dict([(seq, i) for i, seq in enumerate(self.seqlist)])
         self.lab_names = list(self.labs_d.keys())
         self.talab_names = list(self.talabseqs_d_new.keys())
 
@@ -346,7 +371,7 @@ class SequenceDataset(object):
         #     lab_names.remove("spk")
 
         ii = list()
-        for k in self.seqlist:
+        for k in self.clean_seqlist:
             itm = []
             for name in self.lab_names:
                 if k not in self.labs_d[name].seq2lab:  # unsupervised data without labels
@@ -354,7 +379,20 @@ class SequenceDataset(object):
                 else:
                     itm.append(self.labs_d[name].lablist.index(self.labs_d[name].seq2lab[k]))
             ii.append(np.asarray(itm))
-        self.seq2regidx = dict(list(zip(self.seqlist, ii)))
+
+        self.seq2regidx = dict(list(zip(self.clean_seqlist, ii)))
+
+
+        # include nl data, but it is not augmented, so not in finetuning stage
+        # --> not in self.clean_seqlist
+        nl_flag = False
+        for seq in self.clean_seqlist:
+            if seq.startswith('n'):
+                nl_flag = True
+
+        if nl_flag:
+            self.clean_seqlist = [seq for seq in self.seqlist if 'dB' not in seq and seq.startswith('v')]
+
 
     def iterator(self, bs, seqs=None, mapper=None):
         """
@@ -391,9 +429,9 @@ class SequenceDataset(object):
 
 class NumpyDataset(SequenceDataset):
     def __init__(self, feat_scp, len_scp, lab_specs=[], talab_specs=[],
-                 min_len=1, preload=False, mvn_path=None, copy_from=None, train_talabs=None):
+                 min_len=1, preload=False, mvn_path=None, copy_from=None, train_talabs=None, num_noisy_versions=None):
         super(NumpyDataset, self).__init__(
-            feat_scp, len_scp, lab_specs, talab_specs, min_len, copy_from, train_talabs)
+            feat_scp, len_scp, lab_specs, talab_specs, min_len, copy_from, train_talabs, num_noisy_versions)
         if preload:
             feats = OrderedDict()
             for seq in self.seqlist:

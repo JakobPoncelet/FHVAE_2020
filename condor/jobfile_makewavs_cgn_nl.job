@@ -1,0 +1,18 @@
+Universe = vanilla
+RequestCpus = 8
+Request_GPUs = 0
+RequestMemory = 12G
++RequestWalltime = 300000
+
+NiceUser = true
+
+Initialdir = /users/spraak/jponcele/JakobFHVAE/misc/cgn
+Executable = /software/bin/matlab
+Arguments = -nojvm -nodisplay -r maxNumCompThreads($(RequestCpus));
+
+Input = makewavs_CGN.m
+Log = /esat/spchtemp/scratch/jponcele/cgn_nl_sequences/condor/condor.log
+Output = /esat/spchtemp/scratch/jponcele/cgn_nl_sequences/condor/condor.out
+Error = /esat/spchtemp/scratch/jponcele/cgn_nl_sequences/condor/condor.err
+
+Queue

@@ -26,12 +26,9 @@ from collections import OrderedDict
 from scripts.test.eval_loaders import load_data_reg
 from fhvae.runners.test_fhvae import test_reg
 from fhvae.runners.save_latent_vars import save_all_vars
-from fhvae.models.reg_fhvae_lstm_unidir import RegFHVAE_unidirectional
-from fhvae.models.reg_fhvae_lstm_bidir import RegFHVAE_bidirectional
-from fhvae.models.reg_fhvae_lstm_atten import RegFHVAE_attention
-from fhvae.models.reg_fhvae_transf import RegFHVAEtransf
+from fhvae.models.init_model import create_model
 
-# os.environ["CUDA_VISIBLE_DEVICES"]="0"
+# os.environ["CUDA_VISIBLE_DEVICES"]="1"
 
 '''
 Commands (pycharm setup)
@@ -69,7 +66,7 @@ def main(expdir, test_config, save_vars):
 
     # lower the batch size when you have memory problems!
     tt_iterator, tt_iterator_by_seqs, tt_seqs, tt_dset = \
-        load_data_reg(conf['dataset_test'], conf['set_name'], conf['fac_root'], conf['facs'], conf['talabs'], conf['train_talab_vals'])
+        load_data_reg(conf['dataset_test'], conf['set_name'], conf['fac_root'], conf['facs'], conf['talabs'], conf['train_talab_vals'], conf.get('seg_len',20))
 
     # identify regularizing factors
     used_labs = conf['facs'].split(':')
@@ -94,44 +91,19 @@ def main(expdir, test_config, save_vars):
     print('number of phones: ', num_phones)
 
     # initialize the model
-    if conf['model'] == 'LSTM_attention':
-        model = RegFHVAE_attention(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], z1_rhus=conf['z1_rhus'],
-                                   z2_rhus=conf['z2_rhus'], x_rhus=conf['x_rhus'], nmu2=conf['nmu2'], z1_nlabs=b_n,
-                                   z2_nlabs=c_n, mu_nl=None, logvar_nl=None, tr_shape=conf['tr_shape'], bs=conf['batch_size'],
-                                   alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'],
-                                   alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'],
-                                   n_phones=num_phones, priors=conf['priors'])
+    model = create_model(conf)
 
-    if conf['model'] == 'LSTM_unidirectional':
-        model = RegFHVAE_unidirectional(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], z1_rhus=conf['z1_rhus'],
-                                        z2_rhus=conf['z2_rhus'], x_rhus=conf['x_rhus'], nmu2=conf['nmu2'], z1_nlabs=b_n,
-                                        z2_nlabs=c_n, mu_nl=None, logvar_nl=None, tr_shape=conf['tr_shape'],
-                                        bs=conf['batch_size'], alpha_dis_z1=conf['alpha_dis_z1'],
-                                        alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'],
-                                        alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones, priors=conf['priors'])
-
-    if conf['model'] == 'LSTM_bidirectional':
-        model = RegFHVAE_bidirectional(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], z1_rhus=conf['z1_rhus'],
-                                       z2_rhus=conf['z2_rhus'], x_rhus=conf['x_rhus'], nmu2=conf['nmu2'], z1_nlabs=b_n,
-                                       z2_nlabs=c_n, mu_nl=None, logvar_nl=None, tr_shape=conf['tr_shape'],
-                                       bs=conf['batch_size'], alpha_dis_z1=conf['alpha_dis_z1'],
-                                       alpha_dis_z2=conf['alpha_dis_z2'], alpha_reg_b=conf['alpha_reg_b'],
-                                       alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones, priors=conf['priors'])
-
-    if conf['model'] == 'transformer':
-        model = RegFHVAEtransf(z1_dim=conf['z1_dim'], z2_dim=conf['z2_dim'], nmu2=conf['nmu2'], x_rhus=conf['x_rhus'],
-                               tr_shape=conf['tr_shape'], z1_nlabs=b_n, z2_nlabs=c_n, mu_nl=None, logvar_nl=None,
-                               d_model=conf['d_model'], num_enc_layers=conf['num_enc_layers'],
-                               num_heads=conf['num_heads'], dff=conf['dff'], pe_max_len=conf['pe_max_len'],
-                               rate=conf['rate'], alpha_dis_z1=conf['alpha_dis_z1'], alpha_dis_z2=conf['alpha_dis_z2'],
-                               alpha_reg_b=conf['alpha_reg_b'], alpha_reg_c=conf['alpha_reg_c'], n_phones=num_phones, priors=conf['priors'])
+    if 'num_noisy_versions' not in conf:
+        conf['num_noisy_versions'] = 0
 
     # generate and write out Z1/Z2 for train/test/dev files (can take a while)
     if save_vars:
         save_all_vars(expdir, model, conf, trainconf, tt_iterator_by_seqs, tt_dset)
 
     # main testing
-    test_reg(expdir, model, conf, tt_iterator_by_seqs, tt_seqs, tt_dset)
+    # DISABLEDDDDDDD (wastes time for CGN...)
+    if not save_vars:
+        test_reg(expdir, model, conf, tt_iterator_by_seqs, tt_seqs, tt_dset)
 
 
 def load_config(conf):
@@ -163,6 +135,7 @@ if __name__ == '__main__':
     parser.add_argument("--save", type=lambda x: (str(x).lower() == 'true'), default=False, help="if you want to generate and save all latent variables in npy format")
     args = parser.parse_args()
 
+    print("Expdir: %s" % args.expdir)
     if not os.path.isdir(args.expdir):
         print("Expdir does not exist.")
         exit(1)

@@ -13,7 +13,7 @@ def classifier(
         dense_layer_size = 50,
         layers=1,
         activation="relu",
-        nb_phonemes=1,
+        num_classes=1,
         output_name= 'output'
 ):
     # create the model
@@ -22,7 +22,7 @@ def classifier(
     for i in range(layers-1):
         model.add(Dense(dense_layer_size, activation=activation))
 
-    model.add(Dense(nb_phonemes, activation='softmax', name=output_name))
+    model.add(Dense(num_classes, activation='softmax', name=output_name))
 
     if compile:
         model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
