@@ -2,9 +2,9 @@ Universe = vanilla
 
 #cgn: 8 / 30G / 300000 / 1
 #timit: 8 / 10G / 
-RequestCpus = 4
+RequestCpus = 8
 RequestMemory = 20G
-+RequestWallTime = 80000
++RequestWallTime = 200000
 request_GPUs = 1
 
 #cgn: 5.0 / 5000
