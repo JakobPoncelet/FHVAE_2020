@@ -11,7 +11,7 @@ class RegFHVAE_bidirectional_original(tf.keras.Model):
                  bump_logpmu1=1.0, alpha_advreg_b=1.0, alpha_advreg_c=1.0, priors=[0.5, 1.0, 0.5, 1.0],
                  num_flow_steps=0, num_noisy_versions=0, alpha_noise=0.0, name="autoencoder", **kwargs):
 
-        super(RegFHVAE_bidirectional, self).__init__(name=name, **kwargs)
+        super(RegFHVAE_bidirectional_original, self).__init__(name=name, **kwargs)
 
         # input shape
         self.tr_shape = tr_shape

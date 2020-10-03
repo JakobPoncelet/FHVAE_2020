@@ -28,7 +28,7 @@ def hs_train_reg(exp_dir, model, optimizer, conf, tr_iterator_by_seqs, dt_iterat
     # restore a crashed or evicted training job
     if os.path.exists(checkpoint_directory):
         if len(os.listdir(checkpoint_directory)) > 0:
-            manager = tf.train.CheckpointManager(checkpoint, directory=checkpoint_directory, max_to_keep=5)
+            manager = tf.train.CheckpointManager(checkpoint, directory=checkpoint_directory, max_to_keep=20)
             status = checkpoint.restore(manager.latest_checkpoint)  # manager.latest_checkpoint e.g. <ckptdir>/ckpt-3
             curr_epoch = int((os.path.basename(manager.latest_checkpoint)).split('-')[1])
 

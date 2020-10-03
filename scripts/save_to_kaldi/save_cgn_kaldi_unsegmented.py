@@ -14,7 +14,7 @@ from scripts.train.hs_train_loaders import load_data_reg
 from fhvae.datasets.seq2seg import seq_to_seg_mapper
 
 
-def save_cgn_kaldi_unsegmented(expdir, model, conf, datadir, suff, seg_len, seg_shift, lvar, speed_factor):
+def save_cgn_kaldi_unsegmented(expdir, model, conf, datadir, suff, seg_len, seg_shift, lvar, speed_factor, save_numpy):
 
     #####
     # frame spacing of features in s
@@ -72,6 +72,9 @@ def save_cgn_kaldi_unsegmented(expdir, model, conf, datadir, suff, seg_len, seg_
 
         return Dataset
 
+    if save_numpy:
+        os.makedirs('%s/output_features_%s_%s/%s_features' % (expdir, lvar, suff, lvar), exist_ok=True)
+
     print('Writing latent variable %s' % lvar)
 
     seqs = []
@@ -122,6 +125,10 @@ def save_cgn_kaldi_unsegmented(expdir, model, conf, datadir, suff, seg_len, seg_
                                      {seq_name: seg_mat},
                                      scp='%s/output_features_%s_%s/%s_feats.scp' % (expdir, lvar, suff, lvar),
                                      append=True)
+                    if save_numpy:
+                        with open('%s/output_features_%s_%s/%s_features/%s.npy' % (expdir, lvar, suff, lvar, seq_name), 'wb') as f:
+                            np.save(f, seg_mat)
+
                 print("Saved features of %i / %i files" % (curr_seq+1, len(seqs)))
                 curr_seq += 1
                 seg_mat = []
@@ -139,6 +146,10 @@ def save_cgn_kaldi_unsegmented(expdir, model, conf, datadir, suff, seg_len, seg_
                          {seq_name: seg_mat},
                          scp='%s/output_features_%s_%s/%s_feats.scp' % (expdir, lvar, suff, lvar),
                          append=True)
+        if save_numpy:
+            with open('%s/output_features_%s_%s/%s_features/%s.npy' % (expdir, lvar, suff, lvar, seq_name), 'wb') as f:
+                np.save(f, seg_mat)
+
     print("Saved features of %i / %i files" % (curr_seq + 1, len(seqs)))
     curr_seq += 1
     seg_mat = []

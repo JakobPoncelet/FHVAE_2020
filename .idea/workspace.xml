@@ -5,98 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed577b1c-d84e-4f0f-b92d-3d8eda990d38" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/configs/timit/config_lstm_complete_10steps.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot_summary.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/JakobFHVAE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JakobFHVAE.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/condor/jobfile_all.job" beforeDir="false" afterPath="$PROJECT_DIR$/condor/jobfile_all.job" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/condor/jobfile_classifier.job" beforeDir="false" afterPath="$PROJECT_DIR$/condor/jobfile_classifier.job" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/condor/jobfile_test.job" beforeDir="false" afterPath="$PROJECT_DIR$/condor/jobfile_test.job" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/condor/jobfile_train.job" beforeDir="false" afterPath="$PROJECT_DIR$/condor/jobfile_train.job" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/condor/run_all.sh" beforeDir="false" afterPath="$PROJECT_DIR$/condor/run_all.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/cgn/config_afgklno_lstm_bidirectional.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/cgn/config_afgklno_lstm_bidirectional.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/cgn/config_ko_lstm_bidirectional.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/cgn/config_ko_lstm_bidirectional.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/classifier/config_classifier_timit_39phones.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/classifier/config_classifier_timit_39phones.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/classifier/config_classifier_timit_39phones_without_q.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/classifier/config_classifier_timit_39phones_without_q.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/classifier/config_classifier_timit_61phones.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/classifier/config_classifier_timit_61phones.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/defaults/config.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/defaults/config.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/defaults/config_classifier.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/defaults/config_classifier.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_attention_39phones.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_attention_39phones.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_2.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_2.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_3.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_3.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_4.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_4.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_5.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_5.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_breg.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_breg.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_largeprior.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_largeprior.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_largeprior2.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_largeprior2.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_small.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_small.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_smallprior.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_smallprior.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_smallprior2.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_smallprior2.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_phones.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_phones.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_phones_breg.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_phones_breg.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_q.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_bidirectional_39phones_without_q.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_lstm_bidirectional_61phones.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_lstm_bidirectional_61phones.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_lstm_complete.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_lstm_complete.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_transf_39phones.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_transf_39phones.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_unidirectional_39phones.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_unidirectional_39phones.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/timit/config_unidirectional_39phones_small.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/timit/config_unidirectional_39phones_small.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/cgn_np_fbank" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/datasets/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/datasets/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/datasets/audio_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/datasets/audio_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/datasets/seg_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/datasets/seg_dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/datasets/seq2seg.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/datasets/seq2seg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/datasets/seq_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/datasets/seq_dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_OLD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_atten.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_atten_OLD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir_OLD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_unidir.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_unidir_OLD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_transf.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_transf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/runners/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/runners/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/condor/jobfile_all_savekaldi.job" beforeDir="false" afterPath="$PROJECT_DIR$/condor/jobfile_all_savekaldi.job" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/models/init_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/init_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir_ORIG.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir_ORIG.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fhvae/runners/hs_train_fhvae.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/runners/hs_train_fhvae.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/runners/plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/runners/plotter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/runners/save_latent_vars.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/runners/save_latent_vars.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/runners/test_fhvae.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/runners/test_fhvae.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/transformer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/transformer/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/transformer/transf_fhvae.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/transformer/transf_fhvae.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/transformer/transf_fhvae_dec.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/transformer/transf_fhvae_dec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/transformer/transf_layers.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/transformer/transf_layers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fhvae/transformer/transf_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/fhvae/transformer/transf_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/cgn/cgn_per_spk_afgklno_dev.list" beforeDir="false" afterPath="$PROJECT_DIR$/misc/cgn/cgn_per_spk_afgklno_dev.list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/cgn/cgn_per_spk_afgklno_test.list" beforeDir="false" afterPath="$PROJECT_DIR$/misc/cgn/cgn_per_spk_afgklno_test.list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/cgn/makewavs_CGN.m" beforeDir="false" afterPath="$PROJECT_DIR$/misc/cgn/makewavs_CGN.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/cgn/speakers_regions.csv" beforeDir="false" afterPath="$PROJECT_DIR$/misc/cgn/speakers_regions.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/fbank.conf" beforeDir="false" afterPath="$PROJECT_DIR$/misc/fbank.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/timit/phone_map_60_48_39.txt" beforeDir="false" afterPath="$PROJECT_DIR$/misc/timit/phone_map_60_48_39.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/timit/timit_dev_spk.list" beforeDir="false" afterPath="$PROJECT_DIR$/misc/timit/timit_dev_spk.list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/timit/timit_eval.txt" beforeDir="false" afterPath="$PROJECT_DIR$/misc/timit/timit_eval.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/timit/timit_phoneclasses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/misc/timit/timit_phoneclasses.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/timit/timit_test_spk.list" beforeDir="false" afterPath="$PROJECT_DIR$/misc/timit/timit_test_spk.list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_losses.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot_losses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing_examples/prepare_aurora_numpy.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing_examples/prepare_cgn_numpy.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing_examples/prepare_cgn_numpy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing_examples/prepare_timit_numpy.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing_examples/prepare_timit_numpy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/print_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/print_results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/classifier/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classifier/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/classifier/classifier_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classifier/classifier_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/classifier/load_classifier_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classifier/load_classifier_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/classifier/run_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classifier/run_classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/classifier/test_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classifier/test_classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/preprocess/prepare_numpy_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/preprocess/prepare_numpy_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/test/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/test/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/test/eval_loaders.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/test/eval_loaders.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/test/run_eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/test/run_eval.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train/hs_train_loaders.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train/hs_train_loaders.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train/run_hs_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train/run_hs_train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing_examples/cgn_get_feats_for_kaldi.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing_examples/cgn_get_feats_for_kaldi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/save_to_kaldi/run_extract_lvar_unsegmented.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/save_to_kaldi/run_extract_lvar_unsegmented.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi_unsegmented.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi_unsegmented.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -108,20 +24,7 @@
     <favorites_list name="JakobFHVAE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fhvae/runners/hs_train_fhvae.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="38" column="39" lean-forward="true" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -170,8 +73,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm2_bidir.py" />
-        <option value="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm2_unidir.py" />
         <option value="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm2_atten.py" />
         <option value="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm.py" />
         <option value="$PROJECT_DIR$/fhvae/models/reg_fhvae_transf.py" />
@@ -209,18 +110,20 @@
         <option value="$PROJECT_DIR$/scripts/train/run_hs_train2.py" />
         <option value="$PROJECT_DIR$/scripts/train/run_hs_train.py" />
         <option value="$PROJECT_DIR$/fhvae/runners/save_latent_vars.py" />
-        <option value="$PROJECT_DIR$/fhvae/models/init_model.py" />
         <option value="$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir_ORIG.py" />
         <option value="$PROJECT_DIR$/preprocessing_examples/prepare_cgn_numpy.py" />
         <option value="$PROJECT_DIR$/preprocessing_examples/make_fac_lang.py" />
         <option value="$PROJECT_DIR$/preprocessing_examples/combine_with_nl.py" />
         <option value="$PROJECT_DIR$/preprocessing_examples/augmentcgn.m" />
-        <option value="$PROJECT_DIR$/scripts/save_to_kaldi/run_extract_lvar_unsegmented.py" />
-        <option value="$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi_unsegmented.py" />
-        <option value="$PROJECT_DIR$/preprocessing_examples/cgn_get_feats_for_kaldi.py" />
         <option value="$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi.py" />
         <option value="$PROJECT_DIR$/fhvae/runners/hs_train_fhvae.py" />
         <option value="$PROJECT_DIR$/fhvae/runners/finetuning_fhvae.py" />
+        <option value="$PROJECT_DIR$/fhvae/models/init_model.py" />
+        <option value="$PROJECT_DIR$/configs/comparison_23sep/basicFHVAE_softmax.cfg" />
+        <option value="$PROJECT_DIR$/configs/comparison_23sep/basicFHVAE_NF10.cfg" />
+        <option value="$PROJECT_DIR$/preprocessing_examples/cgn_get_feats_for_kaldi.py" />
+        <option value="$PROJECT_DIR$/scripts/save_to_kaldi/run_extract_lvar_unsegmented.py" />
+        <option value="$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi_unsegmented.py" />
       </list>
     </option>
   </component>
@@ -235,6 +138,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -245,18 +149,22 @@
             <path>
               <item name="JakobFHVAE" type="b2602c69:ProjectViewProjectNode" />
               <item name="JakobFHVAE" type="462c0819:PsiDirectoryNode" />
-              <item name="fhvae" type="462c0819:PsiDirectoryNode" />
+              <item name="condor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JakobFHVAE" type="b2602c69:ProjectViewProjectNode" />
               <item name="JakobFHVAE" type="462c0819:PsiDirectoryNode" />
-              <item name="fhvae" type="462c0819:PsiDirectoryNode" />
-              <item name="runners" type="462c0819:PsiDirectoryNode" />
+              <item name="configs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JakobFHVAE" type="b2602c69:ProjectViewProjectNode" />
               <item name="JakobFHVAE" type="462c0819:PsiDirectoryNode" />
               <item name="misc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JakobFHVAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JakobFHVAE" type="462c0819:PsiDirectoryNode" />
+              <item name="preprocessing_examples" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JakobFHVAE" type="b2602c69:ProjectViewProjectNode" />
@@ -279,7 +187,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -292,11 +199,11 @@
       <recent name="$PROJECT_DIR$/preprocessing_examples" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/condor" />
+      <recent name="$PROJECT_DIR$/configs/comparison_23sep" />
       <recent name="$PROJECT_DIR$/scripts/save_to_kaldi" />
       <recent name="$PROJECT_DIR$/fhvae/models" />
       <recent name="$PROJECT_DIR$/preprocessing_examples" />
-      <recent name="$PROJECT_DIR$/configs/comparison_18aug" />
-      <recent name="$PROJECT_DIR$/configs/comparison" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1174,9 +1081,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <frame x="0" y="27" width="1024" height="741" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.785" visible="true" weight="0.16033755" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.785" visible="true" weight="0.16" />
       <window_info id="Structure" order="1" sideWeight="0.23708206" side_tool="true" weight="0.194" />
       <window_info id="Favorites" order="2" sideWeight="0.215" side_tool="true" weight="0.295" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1313,11 +1220,6 @@
           <option name="timeStamp" value="156" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/plot_summary.py</url>
-          <line>105</line>
-          <option name="timeStamp" value="159" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_OLD.py</url>
           <line>145</line>
           <option name="timeStamp" value="176" />
@@ -1409,115 +1311,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi_unsegmented.py</url>
-          <line>79</line>
+          <line>82</line>
           <option name="timeStamp" value="232" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi_unsegmented.py</url>
-          <line>84</line>
+          <line>87</line>
           <option name="timeStamp" value="233" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi_unsegmented.py</url>
-          <line>85</line>
+          <line>88</line>
           <option name="timeStamp" value="234" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/classifier/run_classifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing_examples/prepare_multicondition_large_timit_numpy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/misc/cgn/makewavs_CGN.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="93" selection-start-line="12" selection-start-column="93" selection-end-line="12" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/preprocess/prepare_numpy_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="98" column="28" lean-forward="true" selection-start-line="98" selection-start-column="28" selection-end-line="98" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn_sequences_noisefilter.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="176" lean-forward="true" selection-start-line="176" selection-end-line="176" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn_sequences_noise2.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn_sequences_noise1.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn_sequences_filter.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/comparison_18aug/bidirectional.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1185">
-          <caret line="80" column="19" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/comparison_18aug/bidirectional_large_250ms.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/comparison_18aug/bidirectional_large_150ms.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="253" column="55" selection-start-line="253" selection-start-column="55" selection-end-line="253" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/test/run_eval.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1541,21 +1351,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn_NBEST.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn_sequences.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1863" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn_filter.m">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn_NBEST.m" />
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn_sequences.m" />
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn_filter.m" />
     <entry file="file://$PROJECT_DIR$/misc/cgn/comps_devset.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1624,23 +1422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fhvae/models/init_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="82" selection-start-line="14" selection-start-column="82" selection-end-line="14" selection-end-column="82" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir_ORIG.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="130" selection-start-line="130" selection-end-line="130" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="826">
@@ -1693,16 +1474,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing_examples/make_cgn_kaldi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing_examples/make_fac_lang.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1710,9 +1481,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn.m">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/augmentcgn.m" />
     <entry file="file://$PROJECT_DIR$/preprocessing_examples/combine_with_nl.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1737,36 +1506,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi_unsegmented.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20">
-          <caret line="77" column="36" lean-forward="true" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/save_to_kaldi/run_extract_lvar_unsegmented.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fhvae/datasets/seq_dataset.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="460" selection-start-line="460" selection-end-line="460" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing_examples/cgn_get_feats_for_kaldi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="74" lean-forward="true" selection-start-line="16" selection-start-column="74" selection-end-line="16" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1819,15 +1564,149 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3810">
+          <caret line="253" column="55" selection-start-line="253" selection-start-column="55" selection-end-line="253" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/param_tuning/basicFHVAE.cfg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/comparison_23sep/basic_NF10.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-243">
+          <caret line="39" column="15" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/comparison_23sep/basic_softmax.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-768">
+          <caret line="4" column="35" lean-forward="true" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/comparison_23sep/basic.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-810" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/fhvae/runners/hs_train_fhvae.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="38" column="39" lean-forward="true" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+        <state relative-caret-position="450">
+          <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fhvae/models/init_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fhvae/transformer/transf_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fhvae/models/reg_fhvae_lstm_bidir_ORIG.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7665">
+          <caret line="513" selection-start-line="513" selection-end-line="513" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fhvae/transformer/transf_layers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fhvae/transformer/transf_fhvae.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fhvae/models/reg_fhvae_transf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="123" column="29" selection-start-line="123" selection-start-column="29" selection-end-line="123" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/make_cgn_kaldi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing_examples/cgn_get_feats_for_kaldi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/save_to_kaldi/run_extract_lvar_unsegmented.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="131" column="18" selection-start-line="131" selection-start-column="18" selection-end-line="131" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/save_to_kaldi/save_cgn_kaldi_unsegmented.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/condor/jobfile_all_savekaldi_unsegmented.job">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/condor/run_all_kaldifeats_unsegmented_numpy.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="8" column="154" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="154" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/condor/run_all_kaldifeats_unsegmented.sh">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

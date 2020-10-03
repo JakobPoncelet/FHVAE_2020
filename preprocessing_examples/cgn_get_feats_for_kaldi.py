@@ -33,6 +33,7 @@ lang = 'vl'
 #outdir = '/esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/cgn_kaldi_feats_sp'
 #outdir = '/esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/nbest_augmented_kaldi_feats'
 outdir = '/esat/spchdisk/scratch/jponcele/fhvae_jakob/datasets/cgn_tel_kaldi_feats'
+
 suffix = 'a0'
 speed_perturb = False  # also generate feats at 0.9 and 1.1 speed (for kaldi DNN training)
 
@@ -145,5 +146,10 @@ def compute_feature(name):
 
 compute_feature("train")
 
+for dset in ["train", "dev", "test"]:
+    for f in ["wav.scp", "feats.scp", "len.scp"]:
+        fname = os.path.join(outdir, dset, f)
+        with open(fname, 'a'):
+            pass
 
 print("DONE")

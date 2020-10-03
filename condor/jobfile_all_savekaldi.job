@@ -10,7 +10,8 @@ request_GPUs = 1
 #cgn: 5.0 / 5000
 Requirements = (CUDACapability >= 3.5)\
   &&(Has_avx)\
-  &&(CUDAGlobalMemoryMb >= 3000)
+  &&(CUDAGlobalMemoryMb >= 3000)\
+  &&(machine!="molder.esat.kuleuven.be")
 
 NiceUser = true
 initialdir = /users/spraak/jponcele/JakobFHVAE

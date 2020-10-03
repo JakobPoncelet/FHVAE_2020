@@ -35,7 +35,7 @@ python ./scripts/save_to_kaldi/run_extract_lvar.py --expdir /esat/spchdisk/scrat
 '''
 
 
-def main(expdir, test_config, datadir, suff, seg_len, seg_shift, lvar, speed_factor):
+def main(expdir, test_config, datadir, suff, seg_len, seg_shift, lvar, speed_factor, save_numpy):
     ''' main function '''
 
     # cleanup, we don't want to append to existing files (but don't delete dir when generating speed perturbed files)
@@ -91,8 +91,11 @@ def main(expdir, test_config, datadir, suff, seg_len, seg_shift, lvar, speed_fac
     if 'num_noisy_versions' not in conf:
         conf['num_noisy_versions'] = 0
 
+    if save_numpy.lower() in ['yes', 'true']:
+        save_numpy = True
+
     # generate and write out Z1 as features in KALDI format
-    save_cgn_kaldi_unsegmented(expdir, model, conf, datadir, suff, seg_len, seg_shift, lvar, speed_factor)
+    save_cgn_kaldi_unsegmented(expdir, model, conf, datadir, suff, seg_len, seg_shift, lvar, speed_factor, save_numpy)
 
 
 def load_config(conf):
@@ -133,6 +136,8 @@ if __name__ == '__main__':
                         help="which latent variable featurevector to save (z1 or z2)")
     parser.add_argument("--speed_factor", type=float, default=None,
                         help="to extract speed perturbed features with provided factor (should be 0.9 or 1.1), or None")
+    parser.add_argument("--save_numpy", type=str, default="false",
+                        help="whether to also save the features in .npy format")
     args = parser.parse_args()
 
     print("Expdir: %s" % args.expdir)
@@ -151,4 +156,4 @@ if __name__ == '__main__':
     if args.lvar not in ['z1', 'z2', 'z1z2']:
         raise ValueError("--lvar should be z1 or z2 or z1z2")
 
-    main(args.expdir, args.config, args.datadir, suffix, args.seg_len, args.seg_shift, args.lvar, args.speed_factor)
+    main(args.expdir, args.config, args.datadir, suffix, args.seg_len, args.seg_shift, args.lvar, args.speed_factor, args.save_numpy)
