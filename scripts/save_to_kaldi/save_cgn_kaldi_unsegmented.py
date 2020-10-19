@@ -77,9 +77,9 @@ def save_cgn_kaldi_unsegmented(expdir, model, conf, datadir, suff, seg_len, seg_
 
     print('Writing latent variable %s' % lvar)
 
-    seqs = []
-    seqs.append(tr_dset.seqlist[-1])
-    #seqs = tr_dset.seqlist
+    #seqs = []
+    #seqs.append(tr_dset.seqlist[-1])
+    seqs = tr_dset.seqlist
     if 'test' in suff:
         nbest = True
     else:
